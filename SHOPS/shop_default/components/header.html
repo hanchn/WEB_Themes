@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Default - 现代电商主题</title>
+    <meta name="description" content="Shop Default 是一套现代化的电商网站主题，提供完整的购物体验。">
+    <meta name="keywords" content="电商,购物,在线商店,主题,模板">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/logo.svg">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/components.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/assets/images/logo.svg" as="image">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shopdefault.com/">
+    <meta property="og:title" content="Shop Default - 现代电商主题">
+    <meta property="og:description" content="Shop Default 是一套现代化的电商网站主题，提供完整的购物体验。">
+    <meta property="og:image" content="/assets/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://shopdefault.com/">
+    <meta property="twitter:title" content="Shop Default - 现代电商主题">
+    <meta property="twitter:description" content="Shop Default 是一套现代化的电商网站主题，提供完整的购物体验。">
+    <meta property="twitter:image" content="/assets/images/og-image.jpg">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-container">
+                <!-- Logo -->
+                <a href="/" class="logo">
+                    <img src="/assets/images/logo.svg" alt="Shop Default Logo">
+                    <span class="hidden-xs">Shop Default</span>
+                </a>
+                
+                <!-- Main Navigation -->
+                <nav class="nav hidden-sm">
+                    <a href="/" class="nav-link">首页</a>
+                    
+                    <!-- Products Dropdown -->
+                    <div class="nav-dropdown">
+                        <a href="/collection" class="nav-link">商品</a>
+                        <div class="nav-dropdown-content">
+                            <a href="/collection/electronics" class="nav-dropdown-item">电子产品</a>
+                            <a href="/collection/clothing" class="nav-dropdown-item">服装配饰</a>
+                            <a href="/collection/home" class="nav-dropdown-item">家居用品</a>
+                            <a href="/collection/sports" class="nav-dropdown-item">运动户外</a>
+                            <a href="/collection/beauty" class="nav-dropdown-item">美妆护肤</a>
+                            <a href="/collection/books" class="nav-dropdown-item">图书文具</a>
+                        </div>
+                    </div>
+                    
+                    <a href="/about" class="nav-link">关于我们</a>
+                    <a href="/contact" class="nav-link">联系我们</a>
+                    <a href="/blog" class="nav-link">博客</a>
+                </nav>
+                
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <!-- Search Box -->
+                    <div class="search-box hidden-xs">
+                        <input type="search" class="search-input" placeholder="搜索商品..." aria-label="搜索商品">
+                        <button class="search-btn" type="button" aria-label="搜索">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <!-- User Account -->
+                    <a href="/account" class="header-icon" title="我的账户">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </a>
+                    
+                    <!-- Wishlist -->
+                    <a href="/wishlist" class="header-icon" title="心愿单">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                        <span class="header-icon-badge" style="display: none;">0</span>
+                    </a>
+                    
+                    <!-- Shopping Cart -->
+                    <a href="/cart" class="header-icon" title="购物车">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="m1 1 4 4 2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        <span class="header-icon-badge" style="display: none;">0</span>
+                    </a>
+                    
+                    <!-- Mobile Menu Toggle -->
+                    <button class="mobile-menu-toggle show-sm" aria-label="打开菜单">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <nav class="mobile-nav">
+                <a href="/" class="mobile-nav-link">首页</a>
+                <a href="/collection" class="mobile-nav-link">所有商品</a>
+                <a href="/collection/electronics" class="mobile-nav-link">电子产品</a>
+                <a href="/collection/clothing" class="mobile-nav-link">服装配饰</a>
+                <a href="/collection/home" class="mobile-nav-link">家居用品</a>
+                <a href="/collection/sports" class="mobile-nav-link">运动户外</a>
+                <a href="/collection/beauty" class="mobile-nav-link">美妆护肤</a>
+                <a href="/collection/books" class="mobile-nav-link">图书文具</a>
+                <a href="/about" class="mobile-nav-link">关于我们</a>
+                <a href="/contact" class="mobile-nav-link">联系我们</a>
+                <a href="/blog" class="mobile-nav-link">博客</a>
+                
+                <!-- Mobile Search -->
+                <div class="mobile-search">
+                    <div class="search-box">
+                        <input type="search" class="search-input" placeholder="搜索商品..." aria-label="搜索商品">
+                        <button class="search-btn" type="button" aria-label="搜索">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content Area -->
+    <main class="main-content">
