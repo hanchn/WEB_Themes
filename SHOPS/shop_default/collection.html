@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品集合 - Shop Default</title>
+    <meta name="description" content="浏览我们精选的商品集合，发现您喜爱的产品。">
+    <meta name="keywords" content="商品,集合,购物,电商">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/logo.svg">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/components.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/assets/images/logo.svg" as="image">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-container">
+                <!-- Logo -->
+                <a href="/" class="logo">
+                    <img src="/assets/images/logo.svg" alt="Shop Default Logo">
+                    <span class="hidden-xs">Shop Default</span>
+                </a>
+                
+                <!-- Main Navigation -->
+                <nav class="nav hidden-sm">
+                    <a href="/" class="nav-link">首页</a>
+                    
+                    <!-- Products Dropdown -->
+                    <div class="nav-dropdown">
+                        <a href="/collection" class="nav-link active">商品</a>
+                        <div class="nav-dropdown-content">
+                            <a href="/collection/electronics" class="nav-dropdown-item">电子产品</a>
+                            <a href="/collection/clothing" class="nav-dropdown-item">服装配饰</a>
+                            <a href="/collection/home" class="nav-dropdown-item">家居用品</a>
+                            <a href="/collection/sports" class="nav-dropdown-item">运动户外</a>
+                            <a href="/collection/beauty" class="nav-dropdown-item">美妆护肤</a>
+                            <a href="/collection/books" class="nav-dropdown-item">图书文具</a>
+                        </div>
+                    </div>
+                    
+                    <a href="/about" class="nav-link">关于我们</a>
+                    <a href="/contact" class="nav-link">联系我们</a>
+                    <a href="/blog" class="nav-link">博客</a>
+                </nav>
+                
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <!-- Search Box -->
+                    <div class="search-box hidden-xs">
+                        <input type="search" class="search-input" placeholder="搜索商品..." aria-label="搜索商品">
+                        <button class="search-btn" type="button" aria-label="搜索">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <!-- User Account -->
+                    <a href="/account" class="header-icon" title="我的账户">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </a>
+                    
+                    <!-- Wishlist -->
+                    <a href="/wishlist" class="header-icon" title="心愿单">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                        <span class="header-icon-badge" style="display: none;">0</span>
+                    </a>
+                    
+                    <!-- Shopping Cart -->
+                    <a href="/cart" class="header-icon" title="购物车">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="m1 1 4 4 2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        <span class="header-icon-badge" style="display: none;">0</span>
+                    </a>
+                    
+                    <!-- Mobile Menu Toggle -->
+                    <button class="mobile-menu-toggle show-sm" aria-label="打开菜单">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <nav class="mobile-nav">
+                <a href="/" class="mobile-nav-link">首页</a>
+                <a href="/collection" class="mobile-nav-link active">所有商品</a>
+                <a href="/collection/electronics" class="mobile-nav-link">电子产品</a>
+                <a href="/collection/clothing" class="mobile-nav-link">服装配饰</a>
+                <a href="/collection/home" class="mobile-nav-link">家居用品</a>
+                <a href="/collection/sports" class="mobile-nav-link">运动户外</a>
+                <a href="/collection/beauty" class="mobile-nav-link">美妆护肤</a>
+                <a href="/collection/books" class="mobile-nav-link">图书文具</a>
+                <a href="/about" class="mobile-nav-link">关于我们</a>
+                <a href="/contact" class="mobile-nav-link">联系我们</a>
+                <a href="/blog" class="mobile-nav-link">博客</a>
+                
+                <!-- Mobile Search -->
+                <div class="mobile-search">
+                    <div class="search-box">
+                        <input type="search" class="search-input" placeholder="搜索商品..." aria-label="搜索商品">
+                        <button class="search-btn" type="button" aria-label="搜索">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb">
+            <div class="container">
+                <ol class="breadcrumb-list">
+                    <li class="breadcrumb-item">
+                        <a href="/">首页</a>
+                    </li>
+                    <li class="breadcrumb-item active">
+                        商品集合
+                    </li>
+                </ol>
+            </div>
+        </nav>
+        
+        <!-- Collection Header -->
+        <section class="collection-header">
+            <div class="container">
+                <div class="collection-info">
+                    <h1 class="collection-title">所有商品</h1>
+                    <p class="collection-description">发现我们精选的优质商品，满足您的各种需求</p>
+                    <div class="collection-stats">
+                        <span class="product-count">共 <strong>1,234</strong> 件商品</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Collection Content -->
+        <section class="collection-content">
+            <div class="container">
+                <div class="collection-layout">
+                    <!-- Sidebar Filters -->
+                    <aside class="collection-sidebar">
+                        <div class="filters">
+                            <!-- Category Filter -->
+                            <div class="filter-group">
+                                <h3 class="filter-title">商品分类</h3>
+                                <div class="filter-content">
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="category" value="electronics">
+                                        <span class="checkmark"></span>
+                                        <span class="filter-label">电子产品 (234)</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="category" value="clothing">
+                                        <span class="checkmark"></span>
+                                        <span class="filter-label">服装配饰 (456)</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="category" value="home">
+                                        <span class="checkmark"></span>
+                                        <span class="filter-label">家居用品 (189)</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="category" value="sports">
+                                        <span class="checkmark"></span>
+                                        <span class="filter-label">运动户外 (123)</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="category" value="beauty">
+                                        <span class="checkmark"></span>
+                                        <span class="filter-label">美妆护肤 (167)</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="category" value="books">
+                                        <span class="checkmark"></span>
+                                        <span class="filter-label">图书文具 (65)</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- Price Filter -->
+                            <div class="filter-group">
+                                <h3 class="filter-title">价格范围</h3>
+                                <div class="filter-content">
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="price" value="0-50">
+                                        <span class="checkmark"></span>
+                                        <span class="filter-label">¥0 - ¥50 (89)</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="price" value="50-100">
+                                        <span class="checkmark"></span>
+                                        <span class="filter-label">¥50 - ¥100 (156)</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="price" value="100-200">
+                                        <span class="checkmark"></span>
+                                        <span class="filter-label">¥100 - ¥200 (234)</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="price" value="200-500">
+                                        <span class="checkmark"></span>
+                                        <span class="filter-label">¥200 - ¥500 (345)</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="price" value="500+">
+                                        <span class="checkmark"></span>
+                                        <span class="filter-label">¥500+ (410)</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- Brand Filter -->
+                            <div class="filter-group">
+                                <h3 class="filter-title">品牌</h3>
+                                <div class="filter-content">
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="brand" value="apple">
+                                        <span class="checkmark"></span>
+                                        <span class="filter-label">Apple (45)</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="brand" value="samsung">
+                                        <span class="checkmark"></span>
+                                        <span class="filter-label">Samsung (32)</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="brand" value="nike">
+                                        <span class="checkmark"></span>
+                                        <span class="filter-label">Nike (67)</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="brand" value="adidas">
+                                        <span class="checkmark"></span>
+                                        <span class="filter-label">Adidas (54)</span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="brand" value="uniqlo">
+                                        <span class="checkmark"></span>
+                                        <span class="filter-label">Uniqlo (89)</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- Rating Filter -->
+                            <div class="filter-group">
+                                <h3 class="filter-title">评分</h3>
+                                <div class="filter-content">
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="rating" value="5">
+                                        <span class="checkmark"></span>
+                                        <span class="filter-label">
+                                            <span class="stars">
+                                                <span class="star filled">★</span>
+                                                <span class="star filled">★</span>
+                                                <span class="star filled">★</span>
+                                                <span class="star filled">★</span>
+                                                <span class="star filled">★</span>
+                                            </span>
+                                            (234)
+                                        </span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="rating" value="4">
+                                        <span class="checkmark"></span>
+                                        <span class="filter-label">
+                                            <span class="stars">
+                                                <span class="star filled">★</span>
+                                                <span class="star filled">★</span>
+                                                <span class="star filled">★</span>
+                                                <span class="star filled">★</span>
+                                                <span class="star">★</span>
+                                            </span>
+                                            及以上 (567)
+                                        </span>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="rating" value="3">
+                                        <span class="checkmark"></span>
+                                        <span class="filter-label">
+                                            <span class="stars">
+                                                <span class="star filled">★</span>
+                                                <span class="star filled">★</span>
+                                                <span class="star filled">★</span>
+                                                <span class="star">★</span>
+                                                <span class="star">★</span>
+                                            </span>
+                                            及以上 (789)
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- Clear Filters -->
+                            <div class="filter-actions">
+                                <button class="btn btn-outline btn-sm clear-filters">清除筛选</button>
+                            </div>
+                        </div>
+                    </aside>
+                    
+                    <!-- Main Content -->
+                    <div class="collection-main">
+                        <!-- Toolbar -->
+                        <div class="collection-toolbar">
+                            <div class="toolbar-left">
+                                <button class="btn btn-outline btn-sm filter-toggle show-md" aria-label="显示筛选">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polygon points="22,3 2,3 10,12.46 10,19 14,21 14,12.46"></polygon>
+                                    </svg>
+                                    筛选
+                                </button>
+                                <span class="results-count">显示 1-24 / 共 1,234 件商品</span>
+                            </div>
+                            
+                            <div class="toolbar-right">
+                                <!-- View Toggle -->
+                                <div class="view-toggle">
+                                    <button class="view-btn active" data-view="grid" title="网格视图">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="3" y="3" width="7" height="7"></rect>
+                                            <rect x="14" y="3" width="7" height="7"></rect>
+                                            <rect x="14" y="14" width="7" height="7"></rect>
+                                            <rect x="3" y="14" width="7" height="7"></rect>
+                                        </svg>
+                                    </button>
+                                    <button class="view-btn" data-view="list" title="列表视图">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <line x1="8" y1="6" x2="21" y2="6"></line>
+                                            <line x1="8" y1="12" x2="21" y2="12"></line>
+                                            <line x1="8" y1="18" x2="21" y2="18"></line>
+                                            <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                                            <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                                            <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                                
+                                <!-- Sort Dropdown -->
+                                <div class="sort-dropdown">
+                                    <select class="sort-select">
+                                        <option value="featured">推荐排序</option>
+                                        <option value="price-low">价格从低到高</option>
+                                        <option value="price-high">价格从高到低</option>
+                                        <option value="newest">最新上架</option>
+                                        <option value="rating">评分最高</option>
+                                        <option value="sales">销量最高</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Products Grid -->
+                        <div class="products-grid" data-view="grid">
+                            <!-- Product items will be dynamically loaded here -->
+                            <!-- Sample products for demonstration -->
+                            <div class="product-card" data-product-id="1">
+                                <div class="product-image">
+                                    <div class="product-placeholder">📱</div>
+                                    <div class="product-badges">
+                                        <span class="badge badge-new">新品</span>
+                                    </div>
+                                    <div class="product-actions">
+                                        <button class="product-action" title="快速查看" data-action="quick-view">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                <circle cx="12" cy="12" r="3"></circle>
+                                            </svg>
+                                        </button>
+                                        <button class="product-action" title="添加到心愿单" data-action="add-to-wishlist">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-title">iPhone 15 Pro Max</h3>
+                                    <p class="product-description">最新款iPhone，搭载A17 Pro芯片</p>
+                                    <div class="product-rating">
+                                        <div class="stars">
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                        </div>
+                                        <span class="rating-count">(128)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="price-current">¥9,999</span>
+                                        <span class="price-original">¥10,999</span>
+                                    </div>
+                                    <button class="btn btn-primary btn-block add-to-cart" data-product-id="1">
+                                        加入购物车
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Repeat similar product cards... -->
+                            <!-- For brevity, I'll add a few more sample products -->
+                            <div class="product-card" data-product-id="2">
+                                <div class="product-image">
+                                    <div class="product-placeholder">👕</div>
+                                    <div class="product-badges">
+                                        <span class="badge badge-sale">特价</span>
+                                    </div>
+                                    <div class="product-actions">
+                                        <button class="product-action" title="快速查看" data-action="quick-view">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                <circle cx="12" cy="12" r="3"></circle>
+                                            </svg>
+                                        </button>
+                                        <button class="product-action" title="添加到心愿单" data-action="add-to-wishlist">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-title">经典白色T恤</h3>
+                                    <p class="product-description">100%纯棉材质，舒适透气</p>
+                                    <div class="product-rating">
+                                        <div class="stars">
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star filled">★</span>
+                                            <span class="star">★</span>
+                                        </div>
+                                        <span class="rating-count">(89)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span class="price-current">¥89</span>
+                                        <span class="price-original">¥129</span>
+                                    </div>
+                                    <button class="btn btn-primary btn-block add-to-cart" data-product-id="2">
+                                        加入购物车
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Add more product cards as needed -->
+                        </div>
+                        
+                        <!-- Pagination -->
+                        <nav class="pagination" aria-label="商品分页">
+                            <ul class="pagination-list">
+                                <li class="pagination-item disabled">
+                                    <span class="pagination-link">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="15,18 9,12 15,6"></polyline>
+                                        </svg>
+                                    </span>
+                                </li>
+                                <li class="pagination-item active">
+                                    <span class="pagination-link">1</span>
+                                </li>
+                                <li class="pagination-item">
+                                    <a href="?page=2" class="pagination-link">2</a>
+                                </li>
+                                <li class="pagination-item">
+                                    <a href="?page=3" class="pagination-link">3</a>
+                                </li>
+                                <li class="pagination-item">
+                                    <span class="pagination-ellipsis">...</span>
+                                </li>
+                                <li class="pagination-item">
+                                    <a href="?page=52" class="pagination-link">52</a>
+                                </li>
+                                <li class="pagination-item">
+                                    <a href="?page=2" class="pagination-link">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="9,18 15,12 9,6"></polyline>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <!-- Main Footer Content -->
+            <div class="footer-main">
+                <div class="footer-grid">
+                    <!-- Company Info -->
+                    <div class="footer-section">
+                        <div class="footer-logo">
+                            <img src="/assets/images/logo.svg" alt="Shop Default Logo">
+                            <span>Shop Default</span>
+                        </div>
+                        <p class="footer-description">
+                            Shop Default 是一套现代化的电商网站主题，为您提供完整的在线购物体验。我们致力于为用户创造简洁、优雅且功能强大的购物环境。
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" class="social-link" title="微博" aria-label="关注我们的微博">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M9.31 16.88c-2.73-.3-4.8-1.9-4.8-3.9 0-2.29 2.75-4.27 6.23-4.27.5 0 .98.04 1.44.13-.15-.65-.24-1.32-.24-2.01 0-2.4 1.2-4.43 2.75-4.43s2.75 2.03 2.75 4.43c0 .69-.09 1.36-.24 2.01.46-.09.94-.13 1.44-.13 3.48 0 6.23 1.98 6.23 4.27 0 2-2.07 3.6-4.8 3.9-.73 1.34-2.25 2.12-4.31 2.12s-3.58-.78-4.31-2.12z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link" title="微信" aria-label="关注我们的微信">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8.5 12.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm7 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm-7-9C4.46 3.5 1 6.96 1 11.5c0 2.3.96 4.39 2.5 5.9V22l4.5-2.5c.83.22 1.71.34 2.62.34 4.04 0 7.38-3.46 7.38-7.5 0-.42-.04-.83-.11-1.24C20.15 10.17 22 7.92 22 5.5 22 2.46 19.04 0 15.5 0c-2.5 0-4.7 1.42-5.8 3.5z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link" title="抖音" aria-label="关注我们的抖音">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-.88-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link" title="小红书" aria-label="关注我们的小红书">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Links -->
+                    <div class="footer-section">
+                        <h3 class="footer-title">快速链接</h3>
+                        <ul class="footer-links">
+                            <li><a href="/">首页</a></li>
+                            <li><a href="/collection">所有商品</a></li>
+                            <li><a href="/about">关于我们</a></li>
+                            <li><a href="/contact">联系我们</a></li>
+                            <li><a href="/blog">博客</a></li>
+                            <li><a href="/sitemap">网站地图</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Product Categories -->
+                    <div class="footer-section">
+                        <h3 class="footer-title">商品分类</h3>
+                        <ul class="footer-links">
+                            <li><a href="/collection/electronics">电子产品</a></li>
+                            <li><a href="/collection/clothing">服装配饰</a></li>
+                            <li><a href="/collection/home">家居用品</a></li>
+                            <li><a href="/collection/sports">运动户外</a></li>
+                            <li><a href="/collection/beauty">美妆护肤</a></li>
+                            <li><a href="/collection/books">图书文具</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Customer Service -->
+                    <div class="footer-section">
+                        <h3 class="footer-title">客户服务</h3>
+                        <ul class="footer-links">
+                            <li><a href="/account">我的账户</a></li>
+                            <li><a href="/orders">订单查询</a></li>
+                            <li><a href="/wishlist">心愿单</a></li>
+                            <li><a href="/help">帮助中心</a></li>
+                            <li><a href="/shipping">配送信息</a></li>
+                            <li><a href="/returns">退换货政策</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Contact Info -->
+                    <div class="footer-section">
+                        <h3 class="footer-title">联系信息</h3>
+                        <div class="footer-contact">
+                            <div class="contact-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                <span>北京市朝阳区建国路88号</span>
+                            </div>
+                            <div class="contact-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                                <span>400-888-8888</span>
+                            </div>
+                            <div class="contact-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                <span>service@shopdefault.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12,6 12,12 16,14"></polyline>
+                                </svg>
+                                <span>周一至周日 9:00-21:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="footer-copyright">
+                        <p>&copy; 2024 Shop Default. 保留所有权利。</p>
+                    </div>
+                    <div class="footer-legal">
+                        <a href="/privacy">隐私政策</a>
+                        <a href="/terms">服务条款</a>
+                        <a href="/cookies">Cookie政策</a>
+                    </div>
+                    <div class="footer-payment">
+                        <span>支持的支付方式：</span>
+                        <div class="payment-icons">
+                            <span class="payment-icon" title="支付宝">支付宝</span>
+                            <span class="payment-icon" title="微信支付">微信</span>
+                            <span class="payment-icon" title="银联">银联</span>
+                            <span class="payment-icon" title="Visa">Visa</span>
+                            <span class="payment-icon" title="Mastercard">MC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="返回顶部" style="display: none;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18,15 12,9 6,15"></polyline>
+        </svg>
+    </button>
+    
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" style="display: none;">
+        <div class="loading-spinner"></div>
+    </div>
+    
+    <!-- Notification Container -->
+    <div class="notification-container"></div>
+    
+    <!-- Modal Container -->
+    <div class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="关闭">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-body"></div>
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/cart.js"></script>
+    <script src="/assets/js/wishlist.js"></script>
+    
+    <!-- Collection Page Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // View toggle functionality
+            const viewBtns = document.querySelectorAll('.view-btn');
+            const productsGrid = document.querySelector('.products-grid');
+            
+            viewBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const view = this.dataset.view;
+                    
+                    // Update active button
+                    viewBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Update grid view
+                    productsGrid.setAttribute('data-view', view);
+                });
+            });
+            
+            // Filter toggle for mobile
+            const filterToggle = document.querySelector('.filter-toggle');
+            const sidebar = document.querySelector('.collection-sidebar');
+            
+            if (filterToggle) {
+                filterToggle.addEventListener('click', function() {
+                    sidebar.classList.toggle('active');
+                });
+            }
+            
+            // Clear filters
+            const clearFilters = document.querySelector('.clear-filters');
+            if (clearFilters) {
+                clearFilters.addEventListener('click', function() {
+                    const checkboxes = document.querySelectorAll('.filter-option input[type="checkbox"]');
+                    checkboxes.forEach(checkbox => {
+                        checkbox.checked = false;
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
