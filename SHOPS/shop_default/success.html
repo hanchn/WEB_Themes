@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>支付成功 - Shop Default</title>
+    <meta name="description" content="订单支付成功，感谢您的购买">
+    <meta name="keywords" content="支付成功,订单确认,购买完成">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="支付成功 - Shop Default">
+    <meta property="og:description" content="订单支付成功，感谢您的购买">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shopdefault.com/success">
+    <meta property="og:image" content="assets/images/logo.svg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="订单成功 - Shop Default">
+    <meta name="twitter:description" content="您的订单已成功提交，感谢您的购买">
+    <meta name="twitter:image" content="assets/images/logo.svg">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="header-logo">
+                    <a href="/" class="logo-link">
+                        <img src="assets/images/logo.svg" alt="Shop Default" class="logo-img">
+                    </a>
+                </div>
+                
+                <!-- Checkout Steps -->
+                <div class="checkout-steps">
+                    <div class="step completed">
+                        <span class="step-number">✓</span>
+                        <span class="step-text">购物车</span>
+                    </div>
+                    <div class="step completed">
+                        <span class="step-number">✓</span>
+                        <span class="step-text">结算</span>
+                    </div>
+                    <div class="step active">
+                        <span class="step-number">✓</span>
+                        <span class="step-text">完成</span>
+                    </div>
+                </div>
+                
+                <!-- User Actions -->
+                <div class="header-actions">
+                    <a href="/" class="btn btn-outline">返回首页</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Success Section -->
+        <section class="success-section">
+            <div class="container">
+                <div class="success-content">
+                    <!-- Success Icon -->
+                    <div class="success-icon">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22,4 12,14.01 9,11.01"></polyline>
+                        </svg>
+                    </div>
+                    
+                    <!-- Success Message -->
+                    <div class="success-message">
+                        <h1 class="success-title">支付成功！</h1>
+                        <p class="success-subtitle">感谢您的购买，我们已收到您的订单</p>
+                    </div>
+                    
+                    <!-- Order Information -->
+                    <div class="order-info">
+                        <div class="order-number">
+                            <span class="label">订单号：</span>
+                            <span class="value" id="orderNumber">SD202412250001</span>
+                            <button class="copy-btn" onclick="copyOrderNumber()" title="复制订单号">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="order-date">
+                            <span class="label">下单时间：</span>
+                            <span class="value" id="orderDate">2024年12月25日 14:30</span>
+                        </div>
+                        <div class="order-amount">
+                            <span class="label">支付金额：</span>
+                            <span class="value amount" id="orderAmount">¥1,299.00</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Order Status -->
+                    <div class="order-status">
+                        <div class="status-item active">
+                            <div class="status-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="22,4 12,14.01 9,11.01"></polyline>
+                                </svg>
+                            </div>
+                            <div class="status-info">
+                                <div class="status-title">订单已确认</div>
+                                <div class="status-time">2024-12-25 14:30</div>
+                            </div>
+                        </div>
+                        <div class="status-item">
+                            <div class="status-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="1" y="3" width="15" height="13"></rect>
+                                    <path d="M16 8h4l3 3v5H19a2 2 0 0 1-4 0H9a2 2 0 0 1-4 0H1V8z"></path>
+                                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                                </svg>
+                            </div>
+                            <div class="status-info">
+                                <div class="status-title">准备发货</div>
+                                <div class="status-time">预计今日处理</div>
+                            </div>
+                        </div>
+                        <div class="status-item">
+                            <div class="status-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div class="status-info">
+                                <div class="status-title">配送中</div>
+                                <div class="status-time">预计明日发货</div>
+                            </div>
+                        </div>
+                        <div class="status-item">
+                            <div class="status-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                                </svg>
+                            </div>
+                            <div class="status-info">
+                                <div class="status-title">已送达</div>
+                                <div class="status-time">预计3-5个工作日</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Order Details Section -->
+        <section class="order-details-section">
+            <div class="container">
+                <div class="details-layout">
+                    <!-- Order Items -->
+                    <div class="details-main">
+                        <div class="details-card">
+                            <h3 class="card-title">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                                </svg>
+                                订单商品
+                            </h3>
+                            <div class="order-items" id="orderItems">
+                                <!-- Order items will be dynamically inserted here -->
+                            </div>
+                        </div>
+                        
+                        <!-- Shipping Information -->
+                        <div class="details-card">
+                            <h3 class="card-title">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                配送信息
+                            </h3>
+                            <div class="shipping-info">
+                                <div class="info-row">
+                                    <span class="info-label">收货人：</span>
+                                    <span class="info-value">张三</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">联系电话：</span>
+                                    <span class="info-value">138****8888</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">收货地址：</span>
+                                    <span class="info-value">北京市朝阳区xxx街道xxx号xxx小区xxx楼xxx室</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">配送方式：</span>
+                                    <span class="info-value">标准配送（3-5个工作日）</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">物流单号：</span>
+                                    <span class="info-value tracking-number">暂未生成</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Payment Information -->
+                        <div class="details-card">
+                            <h3 class="card-title">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                                    <line x1="1" y1="10" x2="23" y2="10"></line>
+                                </svg>
+                                支付信息
+                            </h3>
+                            <div class="payment-info">
+                                <div class="info-row">
+                                    <span class="info-label">支付方式：</span>
+                                    <span class="info-value">支付宝</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">支付时间：</span>
+                                    <span class="info-value">2024-12-25 14:30:25</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">交易单号：</span>
+                                    <span class="info-value">2024122514302500001</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">支付状态：</span>
+                                    <span class="info-value status-paid">已支付</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Order Summary -->
+                    <div class="details-sidebar">
+                        <div class="summary-card">
+                            <h3 class="card-title">订单摘要</h3>
+                            <div class="price-breakdown">
+                                <div class="price-row">
+                                    <span class="price-label">商品总价</span>
+                                    <span class="price-value">¥1,199.00</span>
+                                </div>
+                                <div class="price-row">
+                                    <span class="price-label">优惠券折扣</span>
+                                    <span class="price-value discount">-¥50.00</span>
+                                </div>
+                                <div class="price-row">
+                                    <span class="price-label">配送费</span>
+                                    <span class="price-value">¥0.00</span>
+                                </div>
+                                <div class="price-row">
+                                    <span class="price-label">税费</span>
+                                    <span class="price-value">¥69.54</span>
+                                </div>
+                                <div class="price-row total">
+                                    <span class="price-label">实付金额</span>
+                                    <span class="price-value">¥1,218.54</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Quick Actions -->
+                        <div class="actions-card">
+                            <h3 class="card-title">快捷操作</h3>
+                            <div class="action-buttons">
+                                <button class="btn btn-outline btn-full" onclick="downloadInvoice()">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="7,10 12,15 17,10"></polyline>
+                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                    </svg>
+                                    下载发票
+                                </button>
+                                <button class="btn btn-outline btn-full" onclick="trackOrder()">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                    查看物流
+                                </button>
+                                <button class="btn btn-outline btn-full" onclick="contactSupport()">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                    </svg>
+                                    联系客服
+                                </button>
+                                <a href="/" class="btn btn-primary btn-full">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                                    </svg>
+                                    继续购物
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Customer Service -->
+                        <div class="service-card">
+                            <h3 class="card-title">需要帮助？</h3>
+                            <div class="service-info">
+                                <div class="service-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                    </svg>
+                                    <div class="service-details">
+                                        <div class="service-title">客服热线</div>
+                                        <div class="service-value">400-123-4567</div>
+                                    </div>
+                                </div>
+                                <div class="service-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12,6 12,12 16,14"></polyline>
+                                    </svg>
+                                    <div class="service-details">
+                                        <div class="service-title">服务时间</div>
+                                        <div class="service-value">9:00-21:00</div>
+                                    </div>
+                                </div>
+                                <div class="service-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                    <div class="service-details">
+                                        <div class="service-title">邮箱支持</div>
+                                        <div class="service-value">support@shopdefault.com</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Recommended Products -->
+        <section class="recommended-section">
+            <div class="container">
+                <h2 class="section-title">您可能还喜欢</h2>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/300x300?text=Product+1" alt="推荐商品1" class="product-img">
+                            <div class="product-actions">
+                                <button class="action-btn wishlist-btn" title="加入心愿单">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                    </svg>
+                                </button>
+                                <button class="action-btn quick-view-btn" title="快速查看">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">智能手表 Pro</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star">★</span>
+                                </div>
+                                <span class="rating-count">(128)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">¥899</span>
+                                <span class="original-price">¥1,299</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary add-to-cart-btn">加入购物车</button>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/300x300?text=Product+2" alt="推荐商品2" class="product-img">
+                            <div class="product-actions">
+                                <button class="action-btn wishlist-btn" title="加入心愿单">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                    </svg>
+                                </button>
+                                <button class="action-btn quick-view-btn" title="快速查看">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">无线耳机 Air</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                </div>
+                                <span class="rating-count">(256)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">¥299</span>
+                                <span class="original-price">¥399</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary add-to-cart-btn">加入购物车</button>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/300x300?text=Product+3" alt="推荐商品3" class="product-img">
+                            <div class="product-actions">
+                                <button class="action-btn wishlist-btn" title="加入心愿单">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                    </svg>
+                                </button>
+                                <button class="action-btn quick-view-btn" title="快速查看">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">智能音箱 Mini</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star">★</span>
+                                </div>
+                                <span class="rating-count">(89)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">¥199</span>
+                                <span class="original-price">¥299</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary add-to-cart-btn">加入购物车</button>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/300x300?text=Product+4" alt="推荐商品4" class="product-img">
+                            <div class="product-actions">
+                                <button class="action-btn wishlist-btn" title="加入心愿单">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                    </svg>
+                                </button>
+                                <button class="action-btn quick-view-btn" title="快速查看">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">移动电源 20000mAh</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                </div>
+                                <span class="rating-count">(342)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">¥99</span>
+                                <span class="original-price">¥149</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary add-to-cart-btn">加入购物车</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 Shop Default. 保留所有权利。</p>
+                </div>
+                <div class="footer-legal">
+                    <a href="#" class="legal-link">隐私政策</a>
+                    <a href="#" class="legal-link">服务条款</a>
+                    <a href="#" class="legal-link">Cookie政策</a>
+                </div>
+                <div class="footer-payment">
+                    <span class="payment-text">支持的支付方式：</span>
+                    <div class="payment-methods">
+                        <span class="payment-method">支付宝</span>
+                        <span class="payment-method">微信支付</span>
+                        <span class="payment-method">银联</span>
+                        <span class="payment-method">Visa</span>
+                        <span class="payment-method">Mastercard</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Notification Container -->
+    <div class="notification-container" id="notificationContainer"></div>
+    
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/cart.js"></script>
+    
+    <!-- Success Page Specific JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize success page
+            initSuccessPage();
+            
+            // Generate random order number and date
+            generateOrderInfo();
+            
+            // Render order items from localStorage (if available)
+            renderOrderItems();
+            
+            // Auto-update order status (simulation)
+            simulateOrderProgress();
+        });
+        
+        function initSuccessPage() {
+            // Add success page specific initialization
+            console.log('Success page initialized');
+        }
+        
+        function generateOrderInfo() {
+            // Generate random order number
+            const orderNumber = 'SD' + new Date().getFullYear() + 
+                               String(new Date().getMonth() + 1).padStart(2, '0') + 
+                               String(new Date().getDate()).padStart(2, '0') + 
+                               String(Math.floor(Math.random() * 10000)).padStart(4, '0');
+            
+            // Set current date and time
+            const now = new Date();
+            const orderDate = now.getFullYear() + '年' + 
+                             String(now.getMonth() + 1) + '月' + 
+                             String(now.getDate()) + '日 ' + 
+                             String(now.getHours()).padStart(2, '0') + ':' + 
+                             String(now.getMinutes()).padStart(2, '0');
+            
+            document.getElementById('orderNumber').textContent = orderNumber;
+            document.getElementById('orderDate').textContent = orderDate;
+        }
+        
+        function renderOrderItems() {
+            // Try to get order items from localStorage or use mock data
+            let orderItems = [];
+            
+            try {
+                const savedCart = localStorage.getItem('orderItems') || localStorage.getItem('cart');
+                if (savedCart) {
+                    orderItems = JSON.parse(savedCart);
+                }
+            } catch (e) {
+                console.log('No saved order items found');
+            }
+            
+            // Use mock data if no saved items
+            if (orderItems.length === 0) {
+                orderItems = [
+                    {
+                        id: 1,
+                        name: 'iPhone 15 Pro',
+                        image: 'https://via.placeholder.com/80x80?text=iPhone',
+                        price: 999,
+                        quantity: 1,
+                        color: '深空黑色',
+                        storage: '256GB'
+                    },
+                    {
+                        id: 2,
+                        name: 'AirPods Pro',
+                        image: 'https://via.placeholder.com/80x80?text=AirPods',
+                        price: 299,
+                        quantity: 1
+                    }
+                ];
+            }
+            
+            const orderItemsContainer = document.getElementById('orderItems');
+            orderItemsContainer.innerHTML = orderItems.map(item => `
+                <div class="order-item">
+                    <div class="item-image">
+                        <img src="${item.image}" alt="${item.name}" class="item-img">
+                    </div>
+                    <div class="item-info">
+                        <h4 class="item-name">${item.name}</h4>
+                        <div class="item-specs">
+                            ${item.color ? `<span class="spec">颜色: ${item.color}</span>` : ''}
+                            ${item.size ? `<span class="spec">尺寸: ${item.size}</span>` : ''}
+                            ${item.storage ? `<span class="spec">容量: ${item.storage}</span>` : ''}
+                        </div>
+                        <div class="item-quantity">数量: ${item.quantity}</div>
+                    </div>
+                    <div class="item-price">
+                        <span class="price">¥${(item.price * item.quantity).toFixed(2)}</span>
+                    </div>
+                </div>
+            `).join('');
+            
+            // Calculate and update total amount
+            const totalAmount = orderItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            document.getElementById('orderAmount').textContent = `¥${totalAmount.toFixed(2)}`;
+        }
+        
+        function simulateOrderProgress() {
+            // Simulate order status updates (for demo purposes)
+            setTimeout(() => {
+                const statusItems = document.querySelectorAll('.status-item');
+                if (statusItems.length > 1) {
+                    statusItems[1].classList.add('active');
+                    statusItems[1].querySelector('.status-time').textContent = '正在处理中...';
+                }
+            }, 3000);
+        }
+        
+        function copyOrderNumber() {
+            const orderNumber = document.getElementById('orderNumber').textContent;
+            
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(orderNumber).then(() => {
+                    showNotification('订单号已复制到剪贴板', 'success');
+                }).catch(() => {
+                    fallbackCopyTextToClipboard(orderNumber);
+                });
+            } else {
+                fallbackCopyTextToClipboard(orderNumber);
+            }
+        }
+        
+        function fallbackCopyTextToClipboard(text) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.top = '0';
+            textArea.style.left = '0';
+            textArea.style.position = 'fixed';
+            
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                showNotification('订单号已复制到剪贴板', 'success');
+            } catch (err) {
+                showNotification('复制失败，请手动复制', 'error');
+            }
+            
+            document.body.removeChild(textArea);
+        }
+        
+        function downloadInvoice() {
+            // Mock invoice download
+            showNotification('发票下载功能开发中...', 'info');
+            
+            // In a real application, this would trigger a PDF download
+            // window.open('/api/orders/invoice/' + orderNumber, '_blank');
+        }
+        
+        function trackOrder() {
+            // Mock order tracking
+            showNotification('物流信息查询功能开发中...', 'info');
+            
+            // In a real application, this would redirect to tracking page
+            // window.open('/track-order?order=' + orderNumber, '_blank');
+        }
+        
+        function contactSupport() {
+            // Mock customer support contact
+            showNotification('正在为您转接客服...', 'info');
+            
+            // In a real application, this might open a chat widget or redirect to support
+            setTimeout(() => {
+                alert('客服电话：400-123-4567\n服务时间：9:00-21:00\n邮箱：support@shopdefault.com');
+            }, 1000);
+        }
+        
+        // Product card interactions for recommended products
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.add-to-cart-btn')) {
+                e.preventDefault();
+                const productCard = e.target.closest('.product-card');
+                const productName = productCard.querySelector('.product-name').textContent;
+                
+                // Mock add to cart
+                showNotification(`${productName} 已加入购物车`, 'success');
+            }
+            
+            if (e.target.closest('.wishlist-btn')) {
+                e.preventDefault();
+                const btn = e.target.closest('.wishlist-btn');
+                const productCard = btn.closest('.product-card');
+                const productName = productCard.querySelector('.product-name').textContent;
+                
+                // Toggle wishlist state
+                btn.classList.toggle('active');
+                const isAdded = btn.classList.contains('active');
+                
+                showNotification(
+                    isAdded ? `${productName} 已加入心愿单` : `${productName} 已从心愿单移除`,
+                    'success'
+                );
+            }
+            
+            if (e.target.closest('.quick-view-btn')) {
+                e.preventDefault();
+                const productCard = e.target.closest('.product-card');
+                const productName = productCard.querySelector('.product-name').textContent;
+                
+                // Mock quick view
+                showNotification(`正在加载 ${productName} 的详细信息...`, 'info');
+            }
+        });
+    </script>
+</body>
+</html>

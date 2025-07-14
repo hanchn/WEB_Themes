@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>结算 - Shop Default</title>
+    <meta name="description" content="安全便捷的在线支付，多种支付方式可选">
+    <meta name="keywords" content="结算,支付,订单,配送">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="结算 - Shop Default">
+    <meta property="og:description" content="安全便捷的在线支付，多种支付方式可选">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shopdefault.com/checkout">
+    <meta property="og:image" content="assets/images/logo.svg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="结账 - Shop Default">
+    <meta name="twitter:description" content="安全便捷的结账流程，支持多种支付方式">
+    <meta name="twitter:image" content="assets/images/logo.svg">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="header-logo">
+                    <a href="/" class="logo-link">
+                        <img src="assets/images/logo.svg" alt="Shop Default" class="logo-img">
+                    </a>
+                </div>
+                
+                <!-- Checkout Steps -->
+                <div class="checkout-steps">
+                    <div class="step active">
+                        <span class="step-number">1</span>
+                        <span class="step-text">购物车</span>
+                    </div>
+                    <div class="step active">
+                        <span class="step-number">2</span>
+                        <span class="step-text">结算</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <span class="step-text">完成</span>
+                    </div>
+                </div>
+                
+                <!-- Security Info -->
+                <div class="header-security">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                    <span>安全支付</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <div class="container">
+                <nav class="breadcrumb-nav">
+                    <a href="/" class="breadcrumb-link">首页</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <a href="/cart.html" class="breadcrumb-link">购物车</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current">结算</span>
+                </nav>
+            </div>
+        </div>
+        
+        <!-- Checkout Content -->
+        <section class="checkout-section">
+            <div class="container">
+                <div class="checkout-layout">
+                    <!-- Checkout Form -->
+                    <div class="checkout-main">
+                        <form class="checkout-form" id="checkoutForm">
+                            <!-- Contact Information -->
+                            <div class="form-section">
+                                <h2 class="section-title">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                    联系信息
+                                </h2>
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">邮箱地址 *</label>
+                                        <input type="email" id="email" name="email" class="form-input" required placeholder="请输入邮箱地址">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone" class="form-label">手机号码 *</label>
+                                        <input type="tel" id="phone" name="phone" class="form-input" required placeholder="请输入手机号码">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="subscribe" class="checkbox">
+                                        <span class="checkbox-text">订阅我们的邮件，获取最新优惠信息</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- Shipping Address -->
+                            <div class="form-section">
+                                <h2 class="section-title">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                    配送地址
+                                </h2>
+                                
+                                <!-- Saved Addresses -->
+                                <div class="saved-addresses" id="savedAddresses">
+                                    <div class="address-option">
+                                        <label class="address-label">
+                                            <input type="radio" name="address" value="address1" class="address-radio" checked>
+                                            <div class="address-info">
+                                                <div class="address-name">张三</div>
+                                                <div class="address-details">北京市朝阳区xxx街道xxx号xxx小区xxx楼xxx室</div>
+                                                <div class="address-phone">138****8888</div>
+                                                <div class="address-tags">
+                                                    <span class="address-tag default">默认</span>
+                                                    <span class="address-tag">家</span>
+                                                </div>
+                                            </div>
+                                            <div class="address-actions">
+                                                <button type="button" class="btn btn-text edit-address-btn">编辑</button>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="address-option">
+                                        <label class="address-label">
+                                            <input type="radio" name="address" value="address2" class="address-radio">
+                                            <div class="address-info">
+                                                <div class="address-name">张三</div>
+                                                <div class="address-details">上海市浦东新区xxx路xxx号xxx大厦xxx层</div>
+                                                <div class="address-phone">138****8888</div>
+                                                <div class="address-tags">
+                                                    <span class="address-tag">公司</span>
+                                                </div>
+                                            </div>
+                                            <div class="address-actions">
+                                                <button type="button" class="btn btn-text edit-address-btn">编辑</button>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="address-option add-new">
+                                        <button type="button" class="add-address-btn" id="addAddressBtn">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                            </svg>
+                                            添加新地址
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <!-- New Address Form -->
+                                <div class="new-address-form" id="newAddressForm" style="display: none;">
+                                    <div class="form-grid">
+                                        <div class="form-group">
+                                            <label for="firstName" class="form-label">姓 *</label>
+                                            <input type="text" id="firstName" name="firstName" class="form-input" placeholder="请输入姓">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="lastName" class="form-label">名 *</label>
+                                            <input type="text" id="lastName" name="lastName" class="form-input" placeholder="请输入名">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="company" class="form-label">公司（可选）</label>
+                                        <input type="text" id="company" name="company" class="form-input" placeholder="请输入公司名称">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="address1" class="form-label">地址 *</label>
+                                        <input type="text" id="address1" name="address1" class="form-input" placeholder="请输入详细地址">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="address2" class="form-label">地址补充（可选）</label>
+                                        <input type="text" id="address2" name="address2" class="form-input" placeholder="公寓、楼层、门牌号等">
+                                    </div>
+                                    <div class="form-grid">
+                                        <div class="form-group">
+                                            <label for="city" class="form-label">城市 *</label>
+                                            <input type="text" id="city" name="city" class="form-input" placeholder="请输入城市">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="province" class="form-label">省份 *</label>
+                                            <select id="province" name="province" class="form-select">
+                                                <option value="">请选择省份</option>
+                                                <option value="beijing">北京市</option>
+                                                <option value="shanghai">上海市</option>
+                                                <option value="guangdong">广东省</option>
+                                                <option value="zhejiang">浙江省</option>
+                                                <option value="jiangsu">江苏省</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="postalCode" class="form-label">邮政编码 *</label>
+                                            <input type="text" id="postalCode" name="postalCode" class="form-input" placeholder="请输入邮政编码">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="addressPhone" class="form-label">联系电话 *</label>
+                                        <input type="tel" id="addressPhone" name="addressPhone" class="form-input" placeholder="请输入联系电话">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="setDefault" class="checkbox">
+                                            <span class="checkbox-text">设为默认地址</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="button" class="btn btn-outline" id="cancelAddressBtn">取消</button>
+                                        <button type="button" class="btn btn-primary" id="saveAddressBtn">保存地址</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Shipping Method -->
+                            <div class="form-section">
+                                <h2 class="section-title">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M16 3h5v5M4 20L21 3M21 16v5h-5M4 4l5 5"></path>
+                                    </svg>
+                                    配送方式
+                                </h2>
+                                <div class="shipping-options">
+                                    <label class="shipping-option">
+                                        <input type="radio" name="shipping" value="standard" checked>
+                                        <div class="shipping-info">
+                                            <div class="shipping-header">
+                                                <span class="shipping-name">标准配送</span>
+                                                <span class="shipping-price">免费</span>
+                                            </div>
+                                            <div class="shipping-details">
+                                                <span class="shipping-time">3-5个工作日</span>
+                                                <span class="shipping-description">工作日配送，节假日顺延</span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class="shipping-option">
+                                        <input type="radio" name="shipping" value="express">
+                                        <div class="shipping-info">
+                                            <div class="shipping-header">
+                                                <span class="shipping-name">快速配送</span>
+                                                <span class="shipping-price">¥15</span>
+                                            </div>
+                                            <div class="shipping-details">
+                                                <span class="shipping-time">1-2个工作日</span>
+                                                <span class="shipping-description">优先处理，快速送达</span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class="shipping-option">
+                                        <input type="radio" name="shipping" value="same-day">
+                                        <div class="shipping-info">
+                                            <div class="shipping-header">
+                                                <span class="shipping-name">当日达</span>
+                                                <span class="shipping-price">¥25</span>
+                                            </div>
+                                            <div class="shipping-details">
+                                                <span class="shipping-time">当日送达</span>
+                                                <span class="shipping-description">限部分地区，下午3点前下单</span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- Payment Method -->
+                            <div class="form-section">
+                                <h2 class="section-title">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                                        <line x1="1" y1="10" x2="23" y2="10"></line>
+                                    </svg>
+                                    支付方式
+                                </h2>
+                                <div class="payment-options">
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment" value="alipay" checked>
+                                        <div class="payment-info">
+                                            <div class="payment-icon">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="#1677FF">
+                                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+                                                </svg>
+                                            </div>
+                                            <div class="payment-details">
+                                                <span class="payment-name">支付宝</span>
+                                                <span class="payment-description">安全便捷的在线支付</span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment" value="wechat">
+                                        <div class="payment-info">
+                                            <div class="payment-icon">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="#07C160">
+                                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+                                                </svg>
+                                            </div>
+                                            <div class="payment-details">
+                                                <span class="payment-name">微信支付</span>
+                                                <span class="payment-description">微信安全支付</span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment" value="unionpay">
+                                        <div class="payment-info">
+                                            <div class="payment-icon">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="#E21836">
+                                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+                                                </svg>
+                                            </div>
+                                            <div class="payment-details">
+                                                <span class="payment-name">银联支付</span>
+                                                <span class="payment-description">银联在线支付</span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment" value="credit-card">
+                                        <div class="payment-info">
+                                            <div class="payment-icon">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="#6B7280">
+                                                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                                                    <line x1="1" y1="10" x2="23" y2="10"></line>
+                                                </svg>
+                                            </div>
+                                            <div class="payment-details">
+                                                <span class="payment-name">信用卡/借记卡</span>
+                                                <span class="payment-description">支持Visa、Mastercard等</span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                
+                                <!-- Credit Card Form -->
+                                <div class="credit-card-form" id="creditCardForm" style="display: none;">
+                                    <div class="form-group">
+                                        <label for="cardNumber" class="form-label">卡号 *</label>
+                                        <input type="text" id="cardNumber" name="cardNumber" class="form-input" placeholder="1234 5678 9012 3456" maxlength="19">
+                                    </div>
+                                    <div class="form-grid">
+                                        <div class="form-group">
+                                            <label for="expiryDate" class="form-label">有效期 *</label>
+                                            <input type="text" id="expiryDate" name="expiryDate" class="form-input" placeholder="MM/YY" maxlength="5">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cvv" class="form-label">CVV *</label>
+                                            <input type="text" id="cvv" name="cvv" class="form-input" placeholder="123" maxlength="4">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cardName" class="form-label">持卡人姓名 *</label>
+                                        <input type="text" id="cardName" name="cardName" class="form-input" placeholder="请输入持卡人姓名">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Order Notes -->
+                            <div class="form-section">
+                                <h2 class="section-title">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                        <polyline points="14,2 14,8 20,8"></polyline>
+                                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                                        <polyline points="10,9 9,9 8,9"></polyline>
+                                    </svg>
+                                    订单备注
+                                </h2>
+                                <div class="form-group">
+                                    <label for="orderNotes" class="form-label">备注信息（可选）</label>
+                                    <textarea id="orderNotes" name="orderNotes" class="form-textarea" rows="3" placeholder="请输入特殊要求或备注信息"></textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- Order Summary -->
+                    <div class="checkout-sidebar">
+                        <div class="order-summary">
+                            <h3 class="summary-title">订单摘要</h3>
+                            
+                            <!-- Order Items -->
+                            <div class="order-items" id="orderItems">
+                                <!-- Order items will be dynamically inserted here -->
+                            </div>
+                            
+                            <!-- Coupon Section -->
+                            <div class="coupon-section">
+                                <div class="coupon-input-group">
+                                    <input type="text" class="coupon-input" placeholder="输入优惠券代码" id="couponInput">
+                                    <button class="btn btn-outline" id="applyCoupon">使用</button>
+                                </div>
+                                <div class="applied-coupons" id="appliedCoupons"></div>
+                            </div>
+                            
+                            <!-- Price Breakdown -->
+                            <div class="price-breakdown">
+                                <div class="price-row">
+                                    <span class="price-label">商品总价</span>
+                                    <span class="price-value" id="subtotal">¥0</span>
+                                </div>
+                                <div class="price-row">
+                                    <span class="price-label">优惠券折扣</span>
+                                    <span class="price-value discount" id="couponDiscount">-¥0</span>
+                                </div>
+                                <div class="price-row">
+                                    <span class="price-label">配送费</span>
+                                    <span class="price-value" id="shippingFee">¥0</span>
+                                </div>
+                                <div class="price-row">
+                                    <span class="price-label">税费</span>
+                                    <span class="price-value" id="taxFee">¥0</span>
+                                </div>
+                                <div class="price-row total">
+                                    <span class="price-label">总计</span>
+                                    <span class="price-value" id="totalPrice">¥0</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Terms and Conditions -->
+                            <div class="terms-section">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="agreeTerms" class="checkbox" required>
+                                    <span class="checkbox-text">
+                                        我已阅读并同意 <a href="#" class="link">服务条款</a> 和 <a href="#" class="link">隐私政策</a>
+                                    </span>
+                                </label>
+                            </div>
+                            
+                            <!-- Place Order Button -->
+                            <button class="btn btn-primary btn-large place-order-btn" id="placeOrderBtn" disabled>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                </svg>
+                                立即支付 ¥<span id="finalPrice">0</span>
+                            </button>
+                            
+                            <!-- Security Info -->
+                            <div class="security-info">
+                                <div class="security-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    </svg>
+                                    <span>SSL加密保护</span>
+                                </div>
+                                <div class="security-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                        <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                                    </svg>
+                                    <span>7天无理由退货</span>
+                                </div>
+                                <div class="security-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12,6 12,12 16,14"></polyline>
+                                    </svg>
+                                    <span>24小时客服</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 Shop Default. 保留所有权利。</p>
+                </div>
+                <div class="footer-legal">
+                    <a href="#" class="legal-link">隐私政策</a>
+                    <a href="#" class="legal-link">服务条款</a>
+                    <a href="#" class="legal-link">Cookie政策</a>
+                </div>
+                <div class="footer-payment">
+                    <span class="payment-text">支持的支付方式：</span>
+                    <div class="payment-methods">
+                        <span class="payment-method">支付宝</span>
+                        <span class="payment-method">微信支付</span>
+                        <span class="payment-method">银联</span>
+                        <span class="payment-method">Visa</span>
+                        <span class="payment-method">Mastercard</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+    
+    <!-- Notification Container -->
+    <div class="notification-container" id="notificationContainer"></div>
+    
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/cart.js"></script>
+    
+    <!-- Checkout Page Specific JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize checkout page
+            initCheckoutPage();
+            
+            // Address management
+            const addAddressBtn = document.getElementById('addAddressBtn');
+            const newAddressForm = document.getElementById('newAddressForm');
+            const cancelAddressBtn = document.getElementById('cancelAddressBtn');
+            const saveAddressBtn = document.getElementById('saveAddressBtn');
+            
+            addAddressBtn.addEventListener('click', function() {
+                newAddressForm.style.display = 'block';
+                this.style.display = 'none';
+            });
+            
+            cancelAddressBtn.addEventListener('click', function() {
+                newAddressForm.style.display = 'none';
+                addAddressBtn.style.display = 'block';
+                resetAddressForm();
+            });
+            
+            saveAddressBtn.addEventListener('click', function() {
+                if (validateAddressForm()) {
+                    saveNewAddress();
+                    newAddressForm.style.display = 'none';
+                    addAddressBtn.style.display = 'block';
+                    resetAddressForm();
+                    showNotification('地址已保存', 'success');
+                }
+            });
+            
+            // Payment method change
+            const paymentOptions = document.querySelectorAll('input[name="payment"]');
+            const creditCardForm = document.getElementById('creditCardForm');
+            
+            paymentOptions.forEach(option => {
+                option.addEventListener('change', function() {
+                    if (this.value === 'credit-card') {
+                        creditCardForm.style.display = 'block';
+                    } else {
+                        creditCardForm.style.display = 'none';
+                    }
+                });
+            });
+            
+            // Shipping method change
+            const shippingOptions = document.querySelectorAll('input[name="shipping"]');
+            shippingOptions.forEach(option => {
+                option.addEventListener('change', function() {
+                    updateShippingFee();
+                    updateOrderSummary();
+                });
+            });
+            
+            // Terms agreement
+            const agreeTerms = document.getElementById('agreeTerms');
+            const placeOrderBtn = document.getElementById('placeOrderBtn');
+            
+            agreeTerms.addEventListener('change', function() {
+                placeOrderBtn.disabled = !this.checked;
+            });
+            
+            // Coupon functionality
+            const applyCouponBtn = document.getElementById('applyCoupon');
+            const couponInput = document.getElementById('couponInput');
+            
+            applyCouponBtn.addEventListener('click', function() {
+                const couponCode = couponInput.value.trim();
+                if (couponCode) {
+                    applyCouponCode(couponCode);
+                }
+            });
+            
+            // Place order
+            placeOrderBtn.addEventListener('click', function() {
+                if (validateCheckoutForm()) {
+                    processOrder();
+                }
+            });
+            
+            // Credit card input formatting
+            const cardNumberInput = document.getElementById('cardNumber');
+            const expiryDateInput = document.getElementById('expiryDate');
+            const cvvInput = document.getElementById('cvv');
+            
+            if (cardNumberInput) {
+                cardNumberInput.addEventListener('input', function() {
+                    this.value = this.value.replace(/\D/g, '').replace(/(\d{4})(?=\d)/g, '$1 ');
+                });
+            }
+            
+            if (expiryDateInput) {
+                expiryDateInput.addEventListener('input', function() {
+                    this.value = this.value.replace(/\D/g, '').replace(/(\d{2})(?=\d)/, '$1/');
+                });
+            }
+            
+            if (cvvInput) {
+                cvvInput.addEventListener('input', function() {
+                    this.value = this.value.replace(/\D/g, '');
+                });
+            }
+        });
+        
+        function initCheckoutPage() {
+            renderOrderItems();
+            updateOrderSummary();
+        }
+        
+        function renderOrderItems() {
+            const cart = getCart();
+            const orderItems = document.getElementById('orderItems');
+            
+            if (cart.length === 0) {
+                window.location.href = '/cart.html';
+                return;
+            }
+            
+            orderItems.innerHTML = cart.map(item => `
+                <div class="order-item">
+                    <div class="item-image">
+                        <img src="${item.image}" alt="${item.name}" class="item-img">
+                    </div>
+                    <div class="item-info">
+                        <h4 class="item-name">${item.name}</h4>
+                        <div class="item-specs">
+                            ${item.color ? `<span class="spec">颜色: ${item.color}</span>` : ''}
+                            ${item.size ? `<span class="spec">尺寸: ${item.size}</span>` : ''}
+                            ${item.storage ? `<span class="spec">容量: ${item.storage}</span>` : ''}
+                        </div>
+                        <div class="item-quantity">数量: ${item.quantity}</div>
+                    </div>
+                    <div class="item-price">
+                        <span class="price">¥${(item.price * item.quantity).toFixed(2)}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function updateOrderSummary() {
+            const cart = getCart();
+            const subtotalElement = document.getElementById('subtotal');
+            const couponDiscountElement = document.getElementById('couponDiscount');
+            const shippingFeeElement = document.getElementById('shippingFee');
+            const taxFeeElement = document.getElementById('taxFee');
+            const totalPriceElement = document.getElementById('totalPrice');
+            const finalPriceElement = document.getElementById('finalPrice');
+            
+            let subtotal = 0;
+            cart.forEach(item => {
+                subtotal += item.price * item.quantity;
+            });
+            
+            const couponDiscount = getCouponDiscount(subtotal);
+            const shippingFee = getShippingFee();
+            const taxFee = calculateTax(subtotal - couponDiscount);
+            const total = subtotal - couponDiscount + shippingFee + taxFee;
+            
+            subtotalElement.textContent = `¥${subtotal.toFixed(2)}`;
+            couponDiscountElement.textContent = `-¥${couponDiscount.toFixed(2)}`;
+            shippingFeeElement.textContent = `¥${shippingFee.toFixed(2)}`;
+            taxFeeElement.textContent = `¥${taxFee.toFixed(2)}`;
+            totalPriceElement.textContent = `¥${total.toFixed(2)}`;
+            finalPriceElement.textContent = total.toFixed(2);
+        }
+        
+        function validateAddressForm() {
+            const requiredFields = ['firstName', 'lastName', 'address1', 'city', 'province', 'postalCode', 'addressPhone'];
+            let isValid = true;
+            
+            requiredFields.forEach(fieldName => {
+                const field = document.getElementById(fieldName);
+                if (!field.value.trim()) {
+                    field.classList.add('error');
+                    isValid = false;
+                } else {
+                    field.classList.remove('error');
+                }
+            });
+            
+            if (!isValid) {
+                showNotification('请填写所有必填字段', 'error');
+            }
+            
+            return isValid;
+        }
+        
+        function saveNewAddress() {
+            // Mock save address functionality
+            const addressData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                company: document.getElementById('company').value,
+                address1: document.getElementById('address1').value,
+                address2: document.getElementById('address2').value,
+                city: document.getElementById('city').value,
+                province: document.getElementById('province').value,
+                postalCode: document.getElementById('postalCode').value,
+                phone: document.getElementById('addressPhone').value,
+                isDefault: document.querySelector('input[name="setDefault"]').checked
+            };
+            
+            // In a real application, this would be sent to the server
+            console.log('Saving address:', addressData);
+        }
+        
+        function resetAddressForm() {
+            const form = document.getElementById('newAddressForm');
+            const inputs = form.querySelectorAll('input, select, textarea');
+            inputs.forEach(input => {
+                input.value = '';
+                input.checked = false;
+                input.classList.remove('error');
+            });
+        }
+        
+        function validateCheckoutForm() {
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const selectedAddress = document.querySelector('input[name="address"]:checked');
+            const selectedPayment = document.querySelector('input[name="payment"]:checked');
+            
+            if (!email || !phone) {
+                showNotification('请填写联系信息', 'error');
+                return false;
+            }
+            
+            if (!selectedAddress) {
+                showNotification('请选择配送地址', 'error');
+                return false;
+            }
+            
+            if (!selectedPayment) {
+                showNotification('请选择支付方式', 'error');
+                return false;
+            }
+            
+            // Validate credit card if selected
+            if (selectedPayment.value === 'credit-card') {
+                const cardNumber = document.getElementById('cardNumber').value;
+                const expiryDate = document.getElementById('expiryDate').value;
+                const cvv = document.getElementById('cvv').value;
+                const cardName = document.getElementById('cardName').value;
+                
+                if (!cardNumber || !expiryDate || !cvv || !cardName) {
+                    showNotification('请填写完整的信用卡信息', 'error');
+                    return false;
+                }
+            }
+            
+            return true;
+        }
+        
+        function processOrder() {
+            // Show loading
+            document.getElementById('loadingOverlay').style.display = 'flex';
+            
+            // Mock order processing
+            setTimeout(() => {
+                // Clear cart
+                localStorage.removeItem('cart');
+                
+                // Redirect to success page
+                window.location.href = '/success.html';
+            }, 2000);
+        }
+        
+        function applyCouponCode(code) {
+            // Mock coupon validation (same as cart page)
+            const validCoupons = {
+                'SAVE10': { type: 'percentage', value: 10, minAmount: 100 },
+                'SAVE50': { type: 'fixed', value: 50, minAmount: 200 },
+                'WELCOME': { type: 'percentage', value: 15, minAmount: 300 }
+            };
+            
+            const coupon = validCoupons[code.toUpperCase()];
+            if (!coupon) {
+                showNotification('优惠券代码无效', 'error');
+                return;
+            }
+            
+            const subtotal = parseFloat(document.getElementById('subtotal').textContent.replace('¥', ''));
+            if (subtotal < coupon.minAmount) {
+                showNotification(`订单金额需满¥${coupon.minAmount}才能使用此优惠券`, 'warning');
+                return;
+            }
+            
+            // Store applied coupon
+            localStorage.setItem('appliedCoupon', JSON.stringify(coupon));
+            
+            // Show applied coupon
+            const appliedCoupons = document.getElementById('appliedCoupons');
+            appliedCoupons.innerHTML = `
+                <div class="applied-coupon">
+                    <span class="coupon-code">${code.toUpperCase()}</span>
+                    <span class="coupon-discount">-${coupon.type === 'percentage' ? coupon.value + '%' : '¥' + coupon.value}</span>
+                    <button class="remove-coupon-btn" onclick="removeCoupon()">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            `;
+            
+            document.getElementById('couponInput').value = '';
+            updateOrderSummary();
+            showNotification('优惠券已应用', 'success');
+        }
+        
+        function removeCoupon() {
+            localStorage.removeItem('appliedCoupon');
+            document.getElementById('appliedCoupons').innerHTML = '';
+            updateOrderSummary();
+            showNotification('优惠券已移除', 'info');
+        }
+        
+        function getCouponDiscount(subtotal) {
+            const appliedCoupon = localStorage.getItem('appliedCoupon');
+            if (!appliedCoupon) return 0;
+            
+            const coupon = JSON.parse(appliedCoupon);
+            if (subtotal < coupon.minAmount) return 0;
+            
+            if (coupon.type === 'percentage') {
+                return subtotal * (coupon.value / 100);
+            } else {
+                return coupon.value;
+            }
+        }
+        
+        function getShippingFee() {
+            const selectedShipping = document.querySelector('input[name="shipping"]:checked');
+            if (!selectedShipping) return 0;
+            
+            const shippingFees = {
+                'standard': 0,
+                'express': 15,
+                'same-day': 25
+            };
+            
+            return shippingFees[selectedShipping.value] || 0;
+        }
+        
+        function updateShippingFee() {
+            const shippingFee = getShippingFee();
+            document.getElementById('shippingFee').textContent = `¥${shippingFee.toFixed(2)}`;
+        }
+        
+        function calculateTax(amount) {
+            // Mock tax calculation (e.g., 6% tax)
+            return amount * 0.06;
+        }
+    </script>
+</body>
+</html>

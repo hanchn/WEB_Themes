@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>购物车 - Shop Default</title>
-    <meta name="description" content="查看购物车商品，调整数量，使用优惠券，选择配送方式">
-    <meta name="keywords" content="购物车,结算,优惠券,配送">
+    <title>心愿单 - Shop Default</title>
+    <meta name="description" content="查看和管理您的心愿单商品，快速加入购物车">
+    <meta name="keywords" content="心愿单,收藏,喜欢的商品">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
@@ -16,16 +16,16 @@
     <link rel="stylesheet" href="assets/css/responsive.css">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="购物车 - Shop Default">
-    <meta property="og:description" content="查看购物车商品，调整数量，使用优惠券，选择配送方式">
+    <meta property="og:title" content="心愿单 - Shop Default">
+    <meta property="og:description" content="查看和管理您的心愿单商品，快速加入购物车">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://shopdefault.com/cart">
+    <meta property="og:url" content="https://shopdefault.com/wishlist">
     <meta property="og:image" content="assets/images/logo.svg">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="购物车 - Shop Default">
-    <meta name="twitter:description" content="查看和管理您的购物车商品">
+    <meta name="twitter:title" content="心愿单 - Shop Default">
+    <meta name="twitter:description" content="管理您喜欢的商品，随时添加到购物车">
     <meta name="twitter:image" content="assets/images/logo.svg">
 </head>
 <body>
@@ -90,7 +90,7 @@
                     </a>
                     
                     <!-- Wishlist -->
-                    <a href="/wishlist.html" class="header-action wishlist-action">
+                    <a href="/wishlist.html" class="header-action wishlist-action active">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
                         </svg>
@@ -98,7 +98,7 @@
                     </a>
                     
                     <!-- Shopping Cart -->
-                    <a href="/cart.html" class="header-action cart-action active">
+                    <a href="/cart.html" class="header-action cart-action">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="9" cy="21" r="1"></circle>
                             <circle cx="20" cy="21" r="1"></circle>
@@ -137,157 +137,106 @@
                 <nav class="breadcrumb-nav">
                     <a href="/" class="breadcrumb-link">首页</a>
                     <span class="breadcrumb-separator">/</span>
-                    <span class="breadcrumb-current">购物车</span>
+                    <span class="breadcrumb-current">心愿单</span>
                 </nav>
             </div>
         </div>
         
-        <!-- Cart Content -->
-        <section class="cart-section">
+        <!-- Wishlist Content -->
+        <section class="wishlist-section">
             <div class="container">
-                <div class="cart-header">
-                    <h1 class="cart-title">购物车</h1>
-                    <div class="cart-count-info">
-                        <span class="cart-count-text">共 <span id="cartItemCount">0</span> 件商品</span>
+                <div class="wishlist-header">
+                    <h1 class="wishlist-title">我的心愿单</h1>
+                    <div class="wishlist-count-info">
+                        <span class="wishlist-count-text">共 <span id="wishlistItemCount">0</span> 件商品</span>
                     </div>
                 </div>
                 
-                <!-- Cart Content -->
-                <div class="cart-content" id="cartContent">
-                    <!-- Empty Cart State -->
-                    <div class="cart-empty" id="cartEmpty">
+                <!-- Wishlist Content -->
+                <div class="wishlist-content" id="wishlistContent">
+                    <!-- Empty Wishlist State -->
+                    <div class="wishlist-empty" id="wishlistEmpty">
                         <div class="empty-icon">
                             <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                                <circle cx="9" cy="21" r="1"></circle>
-                                <circle cx="20" cy="21" r="1"></circle>
-                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
                             </svg>
                         </div>
-                        <h2 class="empty-title">购物车是空的</h2>
-                        <p class="empty-description">快去挑选您喜欢的商品吧！</p>
+                        <h2 class="empty-title">心愿单是空的</h2>
+                        <p class="empty-description">快去收藏您喜欢的商品吧！</p>
                         <a href="/collection.html" class="btn btn-primary">去购物</a>
                     </div>
                     
-                    <!-- Cart Items -->
-                    <div class="cart-items" id="cartItems" style="display: none;">
-                        <div class="cart-layout">
-                            <!-- Cart Items List -->
-                            <div class="cart-main">
-                                <div class="cart-items-header">
-                                    <div class="select-all">
-                                        <input type="checkbox" id="selectAll" class="cart-checkbox">
-                                        <label for="selectAll">全选</label>
-                                    </div>
-                                    <div class="cart-actions">
-                                        <button class="btn btn-text" id="clearSelected">删除选中</button>
-                                        <button class="btn btn-text" id="moveToWishlist">移至心愿单</button>
-                                    </div>
+                    <!-- Wishlist Items -->
+                    <div class="wishlist-items" id="wishlistItems" style="display: none;">
+                        <!-- Wishlist Toolbar -->
+                        <div class="wishlist-toolbar">
+                            <div class="toolbar-left">
+                                <div class="select-all">
+                                    <input type="checkbox" id="selectAll" class="wishlist-checkbox">
+                                    <label for="selectAll">全选</label>
                                 </div>
-                                
-                                <div class="cart-items-list" id="cartItemsList">
-                                    <!-- Cart items will be dynamically inserted here -->
+                                <div class="bulk-actions">
+                                    <button class="btn btn-outline" id="addAllToCart">全部加入购物车</button>
+                                    <button class="btn btn-text" id="removeSelected">删除选中</button>
+                                    <button class="btn btn-text" id="clearWishlist">清空心愿单</button>
                                 </div>
                             </div>
-                            
-                            <!-- Cart Summary -->
-                            <div class="cart-sidebar">
-                                <div class="cart-summary">
-                                    <h3 class="summary-title">订单摘要</h3>
-                                    
-                                    <!-- Coupon Section -->
-                                    <div class="coupon-section">
-                                        <div class="coupon-input-group">
-                                            <input type="text" class="coupon-input" placeholder="输入优惠券代码" id="couponInput">
-                                            <button class="btn btn-outline" id="applyCoupon">使用</button>
-                                        </div>
-                                        <div class="applied-coupons" id="appliedCoupons"></div>
-                                    </div>
-                                    
-                                    <!-- Shipping Options -->
-                                    <div class="shipping-section">
-                                        <h4 class="shipping-title">配送方式</h4>
-                                        <div class="shipping-options">
-                                            <label class="shipping-option">
-                                                <input type="radio" name="shipping" value="standard" checked>
-                                                <div class="shipping-info">
-                                                    <span class="shipping-name">标准配送</span>
-                                                    <span class="shipping-time">3-5个工作日</span>
-                                                    <span class="shipping-price">免费</span>
-                                                </div>
-                                            </label>
-                                            <label class="shipping-option">
-                                                <input type="radio" name="shipping" value="express">
-                                                <div class="shipping-info">
-                                                    <span class="shipping-name">快速配送</span>
-                                                    <span class="shipping-time">1-2个工作日</span>
-                                                    <span class="shipping-price">¥15</span>
-                                                </div>
-                                            </label>
-                                            <label class="shipping-option">
-                                                <input type="radio" name="shipping" value="same-day">
-                                                <div class="shipping-info">
-                                                    <span class="shipping-name">当日达</span>
-                                                    <span class="shipping-time">当日送达</span>
-                                                    <span class="shipping-price">¥25</span>
-                                                </div>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Price Breakdown -->
-                                    <div class="price-breakdown">
-                                        <div class="price-row">
-                                            <span class="price-label">商品总价</span>
-                                            <span class="price-value" id="subtotal">¥0</span>
-                                        </div>
-                                        <div class="price-row">
-                                            <span class="price-label">优惠券折扣</span>
-                                            <span class="price-value discount" id="couponDiscount">-¥0</span>
-                                        </div>
-                                        <div class="price-row">
-                                            <span class="price-label">配送费</span>
-                                            <span class="price-value" id="shippingFee">¥0</span>
-                                        </div>
-                                        <div class="price-row total">
-                                            <span class="price-label">总计</span>
-                                            <span class="price-value" id="totalPrice">¥0</span>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Checkout Button -->
-                                    <button class="btn btn-primary btn-large checkout-btn" id="checkoutBtn" disabled>
-                                        去结算 (<span id="selectedCount">0</span>)
+                            <div class="toolbar-right">
+                                <div class="view-options">
+                                    <button class="view-btn grid-view active" id="gridView" title="网格视图">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="3" y="3" width="7" height="7"></rect>
+                                            <rect x="14" y="3" width="7" height="7"></rect>
+                                            <rect x="14" y="14" width="7" height="7"></rect>
+                                            <rect x="3" y="14" width="7" height="7"></rect>
+                                        </svg>
                                     </button>
-                                    
-                                    <!-- Security Info -->
-                                    <div class="security-info">
-                                        <div class="security-item">
-                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                                            </svg>
-                                            <span>安全支付保障</span>
-                                        </div>
-                                        <div class="security-item">
-                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                                <polyline points="9,22 9,12 15,12 15,22"></polyline>
-                                            </svg>
-                                            <span>7天无理由退货</span>
-                                        </div>
-                                    </div>
+                                    <button class="view-btn list-view" id="listView" title="列表视图">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <line x1="8" y1="6" x2="21" y2="6"></line>
+                                            <line x1="8" y1="12" x2="21" y2="12"></line>
+                                            <line x1="8" y1="18" x2="21" y2="18"></line>
+                                            <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                                            <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                                            <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="sort-options">
+                                    <select class="sort-select" id="sortSelect">
+                                        <option value="date-desc">最新添加</option>
+                                        <option value="date-asc">最早添加</option>
+                                        <option value="price-asc">价格从低到高</option>
+                                        <option value="price-desc">价格从高到低</option>
+                                        <option value="name-asc">名称 A-Z</option>
+                                        <option value="name-desc">名称 Z-A</option>
+                                    </select>
+                                </div>
+                                <div class="filter-options">
+                                    <select class="filter-select" id="filterSelect">
+                                        <option value="all">全部商品</option>
+                                        <option value="in-stock">有库存</option>
+                                        <option value="out-of-stock">缺货</option>
+                                        <option value="on-sale">促销中</option>
+                                    </select>
                                 </div>
                             </div>
+                        </div>
+                        
+                        <!-- Wishlist Items Grid/List -->
+                        <div class="wishlist-items-container" id="wishlistItemsContainer">
+                            <!-- Wishlist items will be dynamically inserted here -->
                         </div>
                     </div>
                 </div>
                 
-                <!-- Recommended Products -->
-                <section class="recommended-products">
-                    <h2 class="section-title">为您推荐</h2>
+                <!-- Recently Viewed Products -->
+                <section class="recently-viewed">
+                    <h2 class="section-title">最近浏览</h2>
                     <div class="products-grid">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://via.placeholder.com/300x300/6366F1/FFFFFF?text=Recommend+1" alt="推荐产品1" class="product-img">
+                                <img src="https://via.placeholder.com/300x300/6366F1/FFFFFF?text=Recent+1" alt="最近浏览1" class="product-img">
                                 <div class="product-badges">
                                     <span class="badge badge-hot">热销</span>
                                 </div>
@@ -313,7 +262,7 @@
                                 </div>
                             </div>
                             <div class="product-info">
-                                <h3 class="product-title">智能手表 Series 9</h3>
+                                <h3 class="product-title">智能音箱 Mini</h3>
                                 <div class="product-rating">
                                     <div class="rating-stars">
                                         <span class="star active">★</span>
@@ -322,18 +271,18 @@
                                         <span class="star active">★</span>
                                         <span class="star">★</span>
                                     </div>
-                                    <span class="rating-count">(89)</span>
+                                    <span class="rating-count">(67)</span>
                                 </div>
                                 <div class="product-pricing">
-                                    <span class="price-current">¥2,999</span>
-                                    <span class="price-original">¥3,299</span>
+                                    <span class="price-current">¥399</span>
+                                    <span class="price-original">¥499</span>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://via.placeholder.com/300x300/8B5CF6/FFFFFF?text=Recommend+2" alt="推荐产品2" class="product-img">
+                                <img src="https://via.placeholder.com/300x300/8B5CF6/FFFFFF?text=Recent+2" alt="最近浏览2" class="product-img">
                                 <div class="product-actions">
                                     <button class="product-action quick-view-btn" title="快速查看">
                                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -356,7 +305,7 @@
                                 </div>
                             </div>
                             <div class="product-info">
-                                <h3 class="product-title">无线耳机 Pro</h3>
+                                <h3 class="product-title">运动手环 Pro</h3>
                                 <div class="product-rating">
                                     <div class="rating-stars">
                                         <span class="star active">★</span>
@@ -365,63 +314,17 @@
                                         <span class="star active">★</span>
                                         <span class="star active">★</span>
                                     </div>
-                                    <span class="rating-count">(156)</span>
+                                    <span class="rating-count">(123)</span>
                                 </div>
                                 <div class="product-pricing">
-                                    <span class="price-current">¥1,999</span>
+                                    <span class="price-current">¥899</span>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="https://via.placeholder.com/300x300/059669/FFFFFF?text=Recommend+3" alt="推荐产品3" class="product-img">
-                                <div class="product-badges">
-                                    <span class="badge badge-sale">-15%</span>
-                                </div>
-                                <div class="product-actions">
-                                    <button class="product-action quick-view-btn" title="快速查看">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                            <circle cx="12" cy="12" r="3"></circle>
-                                        </svg>
-                                    </button>
-                                    <button class="product-action add-to-cart-btn" title="加入购物车">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <circle cx="9" cy="21" r="1"></circle>
-                                            <circle cx="20" cy="21" r="1"></circle>
-                                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                                        </svg>
-                                    </button>
-                                    <button class="product-action wishlist-btn" title="加入心愿单">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <h3 class="product-title">平板电脑 Air</h3>
-                                <div class="product-rating">
-                                    <div class="rating-stars">
-                                        <span class="star active">★</span>
-                                        <span class="star active">★</span>
-                                        <span class="star active">★</span>
-                                        <span class="star active">★</span>
-                                        <span class="star">★</span>
-                                    </div>
-                                    <span class="rating-count">(73)</span>
-                                </div>
-                                <div class="product-pricing">
-                                    <span class="price-current">¥4,299</span>
-                                    <span class="price-original">¥4,999</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="product-card">
-                            <div class="product-image">
-                                <img src="https://via.placeholder.com/300x300/DC2626/FFFFFF?text=Recommend+4" alt="推荐产品4" class="product-img">
+                                <img src="https://via.placeholder.com/300x300/059669/FFFFFF?text=Recent+3" alt="最近浏览3" class="product-img">
                                 <div class="product-badges">
                                     <span class="badge badge-new">新品</span>
                                 </div>
@@ -447,7 +350,52 @@
                                 </div>
                             </div>
                             <div class="product-info">
-                                <h3 class="product-title">笔记本电脑 Pro</h3>
+                                <h3 class="product-title">蓝牙键盘</h3>
+                                <div class="product-rating">
+                                    <div class="rating-stars">
+                                        <span class="star active">★</span>
+                                        <span class="star active">★</span>
+                                        <span class="star active">★</span>
+                                        <span class="star active">★</span>
+                                        <span class="star">★</span>
+                                    </div>
+                                    <span class="rating-count">(45)</span>
+                                </div>
+                                <div class="product-pricing">
+                                    <span class="price-current">¥599</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://via.placeholder.com/300x300/DC2626/FFFFFF?text=Recent+4" alt="最近浏览4" class="product-img">
+                                <div class="product-badges">
+                                    <span class="badge badge-sale">-20%</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="product-action quick-view-btn" title="快速查看">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                            <circle cx="12" cy="12" r="3"></circle>
+                                        </svg>
+                                    </button>
+                                    <button class="product-action add-to-cart-btn" title="加入购物车">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="9" cy="21" r="1"></circle>
+                                            <circle cx="20" cy="21" r="1"></circle>
+                                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                        </svg>
+                                    </button>
+                                    <button class="product-action wishlist-btn" title="加入心愿单">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">无线鼠标</h3>
                                 <div class="product-rating">
                                     <div class="rating-stars">
                                         <span class="star active">★</span>
@@ -456,10 +404,11 @@
                                         <span class="star active">★</span>
                                         <span class="star active">★</span>
                                     </div>
-                                    <span class="rating-count">(234)</span>
+                                    <span class="rating-count">(89)</span>
                                 </div>
                                 <div class="product-pricing">
-                                    <span class="price-current">¥12,999</span>
+                                    <span class="price-current">¥199</span>
+                                    <span class="price-original">¥249</span>
                                 </div>
                             </div>
                         </div>
@@ -623,46 +572,84 @@
     <script src="assets/js/cart.js"></script>
     <script src="assets/js/wishlist.js"></script>
     
-    <!-- Cart Page Specific JavaScript -->
+    <!-- Wishlist Page Specific JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize cart page
-            initCartPage();
+            // Initialize wishlist page
+            initWishlistPage();
             
-            // Coupon functionality
-            const applyCouponBtn = document.getElementById('applyCoupon');
-            const couponInput = document.getElementById('couponInput');
+            // View toggle functionality
+            const gridViewBtn = document.getElementById('gridView');
+            const listViewBtn = document.getElementById('listView');
+            const wishlistContainer = document.getElementById('wishlistItemsContainer');
             
-            applyCouponBtn.addEventListener('click', function() {
-                const couponCode = couponInput.value.trim();
-                if (couponCode) {
-                    applyCouponCode(couponCode);
-                }
+            gridViewBtn.addEventListener('click', function() {
+                gridViewBtn.classList.add('active');
+                listViewBtn.classList.remove('active');
+                wishlistContainer.classList.remove('list-view');
+                wishlistContainer.classList.add('grid-view');
             });
             
-            // Shipping option change
-            const shippingOptions = document.querySelectorAll('input[name="shipping"]');
-            shippingOptions.forEach(option => {
-                option.addEventListener('change', function() {
-                    updateShippingFee();
-                    updateCartSummary();
-                });
+            listViewBtn.addEventListener('click', function() {
+                listViewBtn.classList.add('active');
+                gridViewBtn.classList.remove('active');
+                wishlistContainer.classList.remove('grid-view');
+                wishlistContainer.classList.add('list-view');
+            });
+            
+            // Sort functionality
+            const sortSelect = document.getElementById('sortSelect');
+            sortSelect.addEventListener('change', function() {
+                sortWishlistItems(this.value);
+                renderWishlistItems();
+            });
+            
+            // Filter functionality
+            const filterSelect = document.getElementById('filterSelect');
+            filterSelect.addEventListener('change', function() {
+                filterWishlistItems(this.value);
+                renderWishlistItems();
             });
             
             // Select all functionality
             const selectAllCheckbox = document.getElementById('selectAll');
             selectAllCheckbox.addEventListener('change', function() {
-                const itemCheckboxes = document.querySelectorAll('.cart-item-checkbox');
+                const itemCheckboxes = document.querySelectorAll('.wishlist-item-checkbox');
                 itemCheckboxes.forEach(checkbox => {
                     checkbox.checked = this.checked;
                 });
-                updateCartSummary();
             });
             
-            // Clear selected items
-            const clearSelectedBtn = document.getElementById('clearSelected');
-            clearSelectedBtn.addEventListener('click', function() {
-                const selectedItems = document.querySelectorAll('.cart-item-checkbox:checked');
+            // Bulk actions
+            const addAllToCartBtn = document.getElementById('addAllToCart');
+            addAllToCartBtn.addEventListener('click', function() {
+                const selectedItems = document.querySelectorAll('.wishlist-item-checkbox:checked');
+                if (selectedItems.length === 0) {
+                    showNotification('请先选择要加入购物车的商品', 'warning');
+                    return;
+                }
+                
+                selectedItems.forEach(checkbox => {
+                    const itemId = checkbox.dataset.itemId;
+                    const wishlistItem = getWishlistItem(itemId);
+                    if (wishlistItem) {
+                        const cartItem = {
+                            id: wishlistItem.id,
+                            name: wishlistItem.name,
+                            price: wishlistItem.price,
+                            image: wishlistItem.image,
+                            quantity: 1
+                        };
+                        addToCart(cartItem);
+                    }
+                });
+                
+                showNotification(`已将 ${selectedItems.length} 件商品加入购物车`, 'success');
+            });
+            
+            const removeSelectedBtn = document.getElementById('removeSelected');
+            removeSelectedBtn.addEventListener('click', function() {
+                const selectedItems = document.querySelectorAll('.wishlist-item-checkbox:checked');
                 if (selectedItems.length === 0) {
                     showNotification('请先选择要删除的商品', 'warning');
                     return;
@@ -671,335 +658,254 @@
                 if (confirm('确定要删除选中的商品吗？')) {
                     selectedItems.forEach(checkbox => {
                         const itemId = checkbox.dataset.itemId;
-                        removeFromCart(itemId);
+                        removeFromWishlist(itemId);
                     });
-                    renderCartItems();
-                    updateCartSummary();
+                    renderWishlistItems();
                     showNotification('选中商品已删除', 'success');
                 }
             });
             
-            // Move to wishlist
-            const moveToWishlistBtn = document.getElementById('moveToWishlist');
-            moveToWishlistBtn.addEventListener('click', function() {
-                const selectedItems = document.querySelectorAll('.cart-item-checkbox:checked');
-                if (selectedItems.length === 0) {
-                    showNotification('请先选择要移动的商品', 'warning');
-                    return;
+            const clearWishlistBtn = document.getElementById('clearWishlist');
+            clearWishlistBtn.addEventListener('click', function() {
+                if (confirm('确定要清空心愿单吗？此操作不可恢复。')) {
+                    clearWishlist();
+                    renderWishlistItems();
+                    showNotification('心愿单已清空', 'info');
                 }
-                
-                selectedItems.forEach(checkbox => {
-                    const itemId = checkbox.dataset.itemId;
-                    const cartItem = getCartItem(itemId);
-                    if (cartItem) {
-                        const wishlistItem = {
-                            id: cartItem.id,
-                            name: cartItem.name,
-                            price: cartItem.price,
-                            image: cartItem.image
-                        };
-                        addToWishlist(wishlistItem);
-                        removeFromCart(itemId);
-                    }
-                });
-                
-                renderCartItems();
-                updateCartSummary();
-                showNotification('选中商品已移至心愿单', 'success');
-            });
-            
-            // Checkout functionality
-            const checkoutBtn = document.getElementById('checkoutBtn');
-            checkoutBtn.addEventListener('click', function() {
-                const selectedItems = document.querySelectorAll('.cart-item-checkbox:checked');
-                if (selectedItems.length === 0) {
-                    showNotification('请先选择要结算的商品', 'warning');
-                    return;
-                }
-                
-                // Redirect to checkout page
-                window.location.href = '/checkout.html';
             });
         });
         
-        function initCartPage() {
-            renderCartItems();
-            updateCartSummary();
+        let filteredWishlist = [];
+        
+        function initWishlistPage() {
+            filteredWishlist = getWishlist();
+            renderWishlistItems();
         }
         
-        function renderCartItems() {
-            const cart = getCart();
-            const cartEmpty = document.getElementById('cartEmpty');
-            const cartItems = document.getElementById('cartItems');
-            const cartItemsList = document.getElementById('cartItemsList');
-            const cartItemCount = document.getElementById('cartItemCount');
+        function renderWishlistItems() {
+            const wishlist = filteredWishlist;
+            const wishlistEmpty = document.getElementById('wishlistEmpty');
+            const wishlistItems = document.getElementById('wishlistItems');
+            const wishlistContainer = document.getElementById('wishlistItemsContainer');
+            const wishlistItemCount = document.getElementById('wishlistItemCount');
             
-            if (cart.length === 0) {
-                cartEmpty.style.display = 'block';
-                cartItems.style.display = 'none';
-                cartItemCount.textContent = '0';
+            if (wishlist.length === 0) {
+                wishlistEmpty.style.display = 'block';
+                wishlistItems.style.display = 'none';
+                wishlistItemCount.textContent = '0';
                 return;
             }
             
-            cartEmpty.style.display = 'none';
-            cartItems.style.display = 'block';
-            cartItemCount.textContent = cart.length;
+            wishlistEmpty.style.display = 'none';
+            wishlistItems.style.display = 'block';
+            wishlistItemCount.textContent = wishlist.length;
             
-            cartItemsList.innerHTML = cart.map(item => `
-                <div class="cart-item" data-item-id="${item.id}">
-                    <div class="cart-item-select">
-                        <input type="checkbox" class="cart-item-checkbox" data-item-id="${item.id}" checked>
+            wishlistContainer.innerHTML = wishlist.map(item => `
+                <div class="wishlist-item" data-item-id="${item.id}">
+                    <div class="wishlist-item-select">
+                        <input type="checkbox" class="wishlist-item-checkbox" data-item-id="${item.id}">
                     </div>
-                    <div class="cart-item-image">
+                    <div class="wishlist-item-image">
                         <img src="${item.image}" alt="${item.name}" class="item-img">
-                    </div>
-                    <div class="cart-item-info">
-                        <h3 class="item-name">${item.name}</h3>
-                        <div class="item-specs">
-                            ${item.color ? `<span class="spec">颜色: ${item.color}</span>` : ''}
-                            ${item.size ? `<span class="spec">尺寸: ${item.size}</span>` : ''}
-                            ${item.storage ? `<span class="spec">容量: ${item.storage}</span>` : ''}
+                        <div class="item-badges">
+                            ${item.onSale ? '<span class="badge badge-sale">促销</span>' : ''}
+                            ${item.isNew ? '<span class="badge badge-new">新品</span>' : ''}
+                            ${!item.inStock ? '<span class="badge badge-out-of-stock">缺货</span>' : ''}
                         </div>
                     </div>
-                    <div class="cart-item-price">
-                        <span class="item-price">¥${item.price}</span>
-                    </div>
-                    <div class="cart-item-quantity">
-                        <div class="quantity-controls">
-                            <button class="quantity-btn quantity-minus" data-item-id="${item.id}">-</button>
-                            <input type="number" class="quantity-input" value="${item.quantity}" min="1" max="10" data-item-id="${item.id}">
-                            <button class="quantity-btn quantity-plus" data-item-id="${item.id}">+</button>
+                    <div class="wishlist-item-info">
+                        <h3 class="item-name">
+                            <a href="/product.html?id=${item.id}" class="item-link">${item.name}</a>
+                        </h3>
+                        <div class="item-rating">
+                            <div class="rating-stars">
+                                ${generateStars(item.rating || 4)}
+                            </div>
+                            <span class="rating-count">(${item.reviewCount || 0})</span>
+                        </div>
+                        <div class="item-price">
+                            <span class="price-current">¥${item.price}</span>
+                            ${item.originalPrice ? `<span class="price-original">¥${item.originalPrice}</span>` : ''}
+                        </div>
+                        <div class="item-stock">
+                            <span class="stock-status ${item.inStock ? 'in-stock' : 'out-of-stock'}">
+                                ${item.inStock ? '有库存' : '缺货'}
+                            </span>
+                        </div>
+                        <div class="item-added-date">
+                            <span class="added-date">添加于 ${formatDate(item.addedDate)}</span>
                         </div>
                     </div>
-                    <div class="cart-item-total">
-                        <span class="item-total">¥${(item.price * item.quantity).toFixed(2)}</span>
-                    </div>
-                    <div class="cart-item-actions">
-                        <button class="btn btn-text move-to-wishlist-btn" data-item-id="${item.id}" title="移至心愿单">
+                    <div class="wishlist-item-actions">
+                        <button class="btn btn-primary add-to-cart-btn" data-item-id="${item.id}" ${!item.inStock ? 'disabled' : ''}>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                             </svg>
+                            ${item.inStock ? '加入购物车' : '缺货'}
                         </button>
-                        <button class="btn btn-text remove-item-btn" data-item-id="${item.id}" title="删除">
+                        <button class="btn btn-outline quick-view-btn" data-item-id="${item.id}" title="快速查看">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            快速查看
+                        </button>
+                        <button class="btn btn-text share-btn" data-item-id="${item.id}" title="分享">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="18" cy="5" r="3"></circle>
+                                <circle cx="6" cy="12" r="3"></circle>
+                                <circle cx="18" cy="19" r="3"></circle>
+                                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                            </svg>
+                            分享
+                        </button>
+                        <button class="btn btn-text remove-btn" data-item-id="${item.id}" title="删除">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="3,6 5,6 21,6"></polyline>
                                 <path d="M19,6v14a2,2,0,0,1-2,2H7a2,2,0,0,1-2-2V6m3,0V4a2,2,0,0,1,2-2h4a2,2,0,0,1,2,2V6"></path>
                             </svg>
+                            删除
                         </button>
                     </div>
                 </div>
             `).join('');
             
-            // Add event listeners for quantity controls
-            addQuantityEventListeners();
-            addItemActionEventListeners();
+            // Add event listeners for item actions
+            addWishlistItemEventListeners();
         }
         
-        function addQuantityEventListeners() {
-            const quantityBtns = document.querySelectorAll('.quantity-btn');
-            const quantityInputs = document.querySelectorAll('.quantity-input');
+        function addWishlistItemEventListeners() {
+            const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+            const quickViewButtons = document.querySelectorAll('.quick-view-btn');
+            const shareButtons = document.querySelectorAll('.share-btn');
+            const removeButtons = document.querySelectorAll('.remove-btn');
             
-            quantityBtns.forEach(btn => {
+            addToCartButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    if (this.disabled) return;
+                    
+                    const itemId = this.dataset.itemId;
+                    const wishlistItem = getWishlistItem(itemId);
+                    if (wishlistItem) {
+                        const cartItem = {
+                            id: wishlistItem.id,
+                            name: wishlistItem.name,
+                            price: wishlistItem.price,
+                            image: wishlistItem.image,
+                            quantity: 1
+                        };
+                        addToCart(cartItem);
+                        showNotification('商品已加入购物车', 'success');
+                    }
+                });
+            });
+            
+            quickViewButtons.forEach(btn => {
                 btn.addEventListener('click', function() {
                     const itemId = this.dataset.itemId;
-                    const isPlus = this.classList.contains('quantity-plus');
-                    const input = document.querySelector(`.quantity-input[data-item-id="${itemId}"]`);
-                    const currentValue = parseInt(input.value);
-                    
-                    if (isPlus && currentValue < 10) {
-                        input.value = currentValue + 1;
-                    } else if (!isPlus && currentValue > 1) {
-                        input.value = currentValue - 1;
-                    }
-                    
-                    updateCartItemQuantity(itemId, parseInt(input.value));
-                    updateItemTotal(itemId);
-                    updateCartSummary();
+                    // Open quick view modal (implementation would depend on your modal system)
+                    showNotification('快速查看功能开发中', 'info');
                 });
             });
             
-            quantityInputs.forEach(input => {
-                input.addEventListener('change', function() {
+            shareButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
                     const itemId = this.dataset.itemId;
-                    const quantity = parseInt(this.value);
-                    
-                    if (quantity < 1) {
-                        this.value = 1;
-                        return;
+                    const wishlistItem = getWishlistItem(itemId);
+                    if (wishlistItem && navigator.share) {
+                        navigator.share({
+                            title: wishlistItem.name,
+                            text: `查看这个商品：${wishlistItem.name}`,
+                            url: `/product.html?id=${itemId}`
+                        });
+                    } else {
+                        // Fallback: copy to clipboard
+                        const url = `${window.location.origin}/product.html?id=${itemId}`;
+                        navigator.clipboard.writeText(url).then(() => {
+                            showNotification('商品链接已复制到剪贴板', 'success');
+                        });
                     }
-                    if (quantity > 10) {
-                        this.value = 10;
-                        return;
-                    }
-                    
-                    updateCartItemQuantity(itemId, quantity);
-                    updateItemTotal(itemId);
-                    updateCartSummary();
                 });
             });
-        }
-        
-        function addItemActionEventListeners() {
-            const removeButtons = document.querySelectorAll('.remove-item-btn');
-            const moveToWishlistButtons = document.querySelectorAll('.move-to-wishlist-btn');
             
             removeButtons.forEach(btn => {
                 btn.addEventListener('click', function() {
                     const itemId = this.dataset.itemId;
-                    if (confirm('确定要删除这个商品吗？')) {
-                        removeFromCart(itemId);
-                        renderCartItems();
-                        updateCartSummary();
-                        showNotification('商品已删除', 'success');
-                    }
-                });
-            });
-            
-            moveToWishlistButtons.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const itemId = this.dataset.itemId;
-                    const cartItem = getCartItem(itemId);
-                    if (cartItem) {
-                        const wishlistItem = {
-                            id: cartItem.id,
-                            name: cartItem.name,
-                            price: cartItem.price,
-                            image: cartItem.image
-                        };
-                        addToWishlist(wishlistItem);
-                        removeFromCart(itemId);
-                        renderCartItems();
-                        updateCartSummary();
-                        showNotification('商品已移至心愿单', 'success');
+                    if (confirm('确定要从心愿单中删除这个商品吗？')) {
+                        removeFromWishlist(itemId);
+                        filteredWishlist = filteredWishlist.filter(item => item.id !== itemId);
+                        renderWishlistItems();
+                        showNotification('商品已从心愿单删除', 'success');
                     }
                 });
             });
         }
         
-        function updateItemTotal(itemId) {
-            const cartItem = getCartItem(itemId);
-            if (cartItem) {
-                const totalElement = document.querySelector(`.cart-item[data-item-id="${itemId}"] .item-total`);
-                if (totalElement) {
-                    totalElement.textContent = `¥${(cartItem.price * cartItem.quantity).toFixed(2)}`;
-                }
+        function sortWishlistItems(sortBy) {
+            switch (sortBy) {
+                case 'date-desc':
+                    filteredWishlist.sort((a, b) => new Date(b.addedDate) - new Date(a.addedDate));
+                    break;
+                case 'date-asc':
+                    filteredWishlist.sort((a, b) => new Date(a.addedDate) - new Date(b.addedDate));
+                    break;
+                case 'price-asc':
+                    filteredWishlist.sort((a, b) => a.price - b.price);
+                    break;
+                case 'price-desc':
+                    filteredWishlist.sort((a, b) => b.price - a.price);
+                    break;
+                case 'name-asc':
+                    filteredWishlist.sort((a, b) => a.name.localeCompare(b.name));
+                    break;
+                case 'name-desc':
+                    filteredWishlist.sort((a, b) => b.name.localeCompare(a.name));
+                    break;
             }
         }
         
-        function updateCartSummary() {
-            const selectedCheckboxes = document.querySelectorAll('.cart-item-checkbox:checked');
-            const subtotalElement = document.getElementById('subtotal');
-            const couponDiscountElement = document.getElementById('couponDiscount');
-            const shippingFeeElement = document.getElementById('shippingFee');
-            const totalPriceElement = document.getElementById('totalPrice');
-            const selectedCountElement = document.getElementById('selectedCount');
-            const checkoutBtn = document.getElementById('checkoutBtn');
+        function filterWishlistItems(filterBy) {
+            const wishlist = getWishlist();
             
-            let subtotal = 0;
-            let selectedCount = 0;
-            
-            selectedCheckboxes.forEach(checkbox => {
-                const itemId = checkbox.dataset.itemId;
-                const cartItem = getCartItem(itemId);
-                if (cartItem) {
-                    subtotal += cartItem.price * cartItem.quantity;
-                    selectedCount++;
-                }
+            switch (filterBy) {
+                case 'all':
+                    filteredWishlist = [...wishlist];
+                    break;
+                case 'in-stock':
+                    filteredWishlist = wishlist.filter(item => item.inStock);
+                    break;
+                case 'out-of-stock':
+                    filteredWishlist = wishlist.filter(item => !item.inStock);
+                    break;
+                case 'on-sale':
+                    filteredWishlist = wishlist.filter(item => item.onSale);
+                    break;
+            }
+        }
+        
+        function generateStars(rating) {
+            let stars = '';
+            for (let i = 1; i <= 5; i++) {
+                stars += `<span class="star ${i <= rating ? 'active' : ''}">★</span>`;
+            }
+            return stars;
+        }
+        
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('zh-CN', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
             });
-            
-            const couponDiscount = getCouponDiscount(subtotal);
-            const shippingFee = getShippingFee();
-            const total = subtotal - couponDiscount + shippingFee;
-            
-            subtotalElement.textContent = `¥${subtotal.toFixed(2)}`;
-            couponDiscountElement.textContent = `-¥${couponDiscount.toFixed(2)}`;
-            shippingFeeElement.textContent = `¥${shippingFee.toFixed(2)}`;
-            totalPriceElement.textContent = `¥${total.toFixed(2)}`;
-            selectedCountElement.textContent = selectedCount;
-            
-            checkoutBtn.disabled = selectedCount === 0;
         }
         
-        function applyCouponCode(code) {
-            // Mock coupon validation
-            const validCoupons = {
-                'SAVE10': { type: 'percentage', value: 10, minAmount: 100 },
-                'SAVE50': { type: 'fixed', value: 50, minAmount: 200 },
-                'WELCOME': { type: 'percentage', value: 15, minAmount: 300 }
-            };
-            
-            const coupon = validCoupons[code.toUpperCase()];
-            if (!coupon) {
-                showNotification('优惠券代码无效', 'error');
-                return;
-            }
-            
-            const subtotal = parseFloat(document.getElementById('subtotal').textContent.replace('¥', ''));
-            if (subtotal < coupon.minAmount) {
-                showNotification(`订单金额需满¥${coupon.minAmount}才能使用此优惠券`, 'warning');
-                return;
-            }
-            
-            // Store applied coupon
-            localStorage.setItem('appliedCoupon', JSON.stringify(coupon));
-            
-            // Show applied coupon
-            const appliedCoupons = document.getElementById('appliedCoupons');
-            appliedCoupons.innerHTML = `
-                <div class="applied-coupon">
-                    <span class="coupon-code">${code.toUpperCase()}</span>
-                    <span class="coupon-discount">-${coupon.type === 'percentage' ? coupon.value + '%' : '¥' + coupon.value}</span>
-                    <button class="remove-coupon-btn" onclick="removeCoupon()">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="18" y1="6" x2="6" y2="18"></line>
-                            <line x1="6" y1="6" x2="18" y2="18"></line>
-                        </svg>
-                    </button>
-                </div>
-            `;
-            
-            document.getElementById('couponInput').value = '';
-            updateCartSummary();
-            showNotification('优惠券已应用', 'success');
-        }
-        
-        function removeCoupon() {
-            localStorage.removeItem('appliedCoupon');
-            document.getElementById('appliedCoupons').innerHTML = '';
-            updateCartSummary();
-            showNotification('优惠券已移除', 'info');
-        }
-        
-        function getCouponDiscount(subtotal) {
-            const appliedCoupon = localStorage.getItem('appliedCoupon');
-            if (!appliedCoupon) return 0;
-            
-            const coupon = JSON.parse(appliedCoupon);
-            if (subtotal < coupon.minAmount) return 0;
-            
-            if (coupon.type === 'percentage') {
-                return subtotal * (coupon.value / 100);
-            } else {
-                return coupon.value;
-            }
-        }
-        
-        function getShippingFee() {
-            const selectedShipping = document.querySelector('input[name="shipping"]:checked');
-            if (!selectedShipping) return 0;
-            
-            const shippingFees = {
-                'standard': 0,
-                'express': 15,
-                'same-day': 25
-            };
-            
-            return shippingFees[selectedShipping.value] || 0;
-        }
-        
-        function updateShippingFee() {
-            const shippingFee = getShippingFee();
-            document.getElementById('shippingFee').textContent = `¥${shippingFee.toFixed(2)}`;
+        function getWishlistItem(itemId) {
+            const wishlist = getWishlist();
+            return wishlist.find(item => item.id === itemId);
         }
     </script>
 </body>
